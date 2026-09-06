@@ -1,0 +1,40 @@
+diff --git a/src/main/java/net/openid/conformance/vci10wallet/VCICredentialConfigurations.java b/src/main/java/net/openid/conformance/vci10wallet/VCICredentialConfigurations.java
+index fceb71243..59a4fa6c3 100644
+--- a/src/main/java/net/openid/conformance/vci10wallet/VCICredentialConfigurations.java
++++ b/src/main/java/net/openid/conformance/vci10wallet/VCICredentialConfigurations.java
+@@ -295,6 +295,10 @@ public class VCICredentialConfigurations {
+ 
+ 	public static JsonObject getDefault(String testId) {
+ 		String jsonString = DEFAULT_JSON_STRING.replace("${testId}", testId);
+-		return JsonParser.parseString(jsonString).getAsJsonObject();
++		JsonObject configurations = JsonParser.parseString(jsonString).getAsJsonObject();
++		JsonObject sdjwt = configurations.getAsJsonObject("eu.europa.ec.eudi.pid.1").deepCopy();
++		sdjwt.addProperty("scope", "wallet-test-sdjwt");
++		configurations.add("wallet-test-sdjwt", sdjwt);
++		return configurations;
+ 	}
+ }
+diff --git a/src/test/java/net/openid/conformance/vci10wallet/WalletSdJwtAlias_UnitTest.java b/src/test/java/net/openid/conformance/vci10wallet/WalletSdJwtAlias_UnitTest.java
+new file mode 100644
+index 000000000..3b096b916
+--- /dev/null
++++ b/src/test/java/net/openid/conformance/vci10wallet/WalletSdJwtAlias_UnitTest.java
+@@ -0,0 +1,18 @@
++package net.openid.conformance.vci10wallet;
++
++import org.junit.jupiter.api.Test;
++import static org.junit.jupiter.api.Assertions.assertEquals;
++import static org.junit.jupiter.api.Assertions.assertNotNull;
++
++public class WalletSdJwtAlias_UnitTest {
++	@Test
++	public void aliasKeepsCredentialAndProofRequirements() {
++		var credentials = VCICredentialConfigurations.getDefault("alias-test");
++		var original = credentials.getAsJsonObject("eu.europa.ec.eudi.pid.1");
++		var alias = credentials.getAsJsonObject("wallet-test-sdjwt");
++		assertNotNull(alias);
++		var expected = original.deepCopy();
++		expected.addProperty("scope", "wallet-test-sdjwt");
++		assertEquals(expected, alias);
++	}
++}

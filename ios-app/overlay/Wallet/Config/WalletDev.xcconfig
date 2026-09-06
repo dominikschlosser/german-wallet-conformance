@@ -1,0 +1,21 @@
+// Local simulator settings. See ios-app/README.md.
+
+#include "version.xcconfig"
+
+VCI_ISSUER_URL = https:/$()/localhost:8098/issuer
+PID_ISSUER_NAME = eudi-dev demo issuer
+VCI_REDIRECT_URI = org.sprind.wallet.dev:/authorization
+CORE_USER_AUTH = false
+BUILD_VARIANT = DEV
+WALLET_HOST_URL = https:/$()/localhost:8096
+BURGERAMT_SERVICE_LINK = https:/$()/servicesuche.bund.de
+PRIVACY_POLICY_LINK = https:/$()/localhost:8096/privacy
+WALLET_OTLP_HOST_URL = http:/$()/localhost:4318
+WALLET_OTLP_SERVICE_NAME = eudi-wallet-de-ios-conformance
+FEATURE_FLAG_BASE_URL = https:/$()/localhost:8096
+APP_UPDATE_URL = https:/$()/localhost:8096/app-update
+BATCH_COUNT = 3
+PID_MSO_MDOC_CONFIG_ID = german-pid-mdoc
+PID_SD_JWT_CONFIG_ID = german-pid-sdjwt
+APS_ENVIRONMENT = development
+APS_ENVIRONMENT[config=DevRelease] = production

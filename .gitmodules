@@ -1,0 +1,6 @@
+[submodule "upstream/ios"]
+	path = upstream/ios
+	url = https://github.com/german-national-wallet/de-eudi-wallet-ios.git
+[submodule "upstream/mock-backend"]
+	path = upstream/mock-backend
+	url = https://github.com/dominikschlosser/german-wallet-mock-backend.git
