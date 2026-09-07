@@ -2,7 +2,9 @@ package conformance
 
 import (
 	"archive/zip"
+	"bytes"
 	"context"
+	"encoding/json"
 	"io"
 	"log"
 	"net/http"
@@ -117,7 +119,7 @@ func TestFailureLogExport(t *testing.T) {
 		{ID: "failed", Name: "batch", Verdict: "FAILED", Variant: Variant{"vci_credential_issuance_mode": "deferred", "vci_credential_encryption": "plain"}},
 		{ID: "passed", Name: "happy", Verdict: "PASSED"},
 	}}}
-	suiteLog := []byte(`{"testInfo":{"testId":"failed"},"results":[{"msg":"protocol check failed","result":"FAILURE"}]}`)
+	suiteLog := []byte(`{"testInfo":{"testId":"failed"},"results":[{"msg":"protocol check failed\nDetails: \"issuer\"","result":"FAILURE","sequence":9007199254740993,"fraction":1e-9}]}`)
 	archivePath := filepath.Join(root, "vci-haip-mdoc-byval-plan.zip")
 	archive, err := os.Create(archivePath)
 	if err != nil {
@@ -158,8 +160,18 @@ func TestFailureLogExport(t *testing.T) {
 		t.Fatalf("exported log = %q, %v", got, err)
 	}
 	got, err = os.ReadFile(filepath.Join(root, "docs", "test-results", "failed-suite.json"))
-	if err != nil || string(got) != string(suiteLog) {
+	if err != nil {
 		t.Fatalf("exported suite log = %q, %v", got, err)
+	}
+	if !bytes.Contains(got, []byte("\n  \"testInfo\": {\n    \"testId\": \"failed\"\n  }")) || !bytes.HasSuffix(got, []byte("}\n")) {
+		t.Fatalf("suite log is not indented with a final newline: %s", got)
+	}
+	var compact bytes.Buffer
+	if err := json.Compact(&compact, got); err != nil {
+		t.Fatal(err)
+	}
+	if !bytes.Equal(compact.Bytes(), suiteLog) {
+		t.Fatalf("formatting changed suite data: %s", got)
 	}
 	got, err = os.ReadFile(filepath.Join(root, "docs", "test-results", "failed.md"))
 	if err != nil || !strings.Contains(string(got), "failed-wallet.txt") || !strings.Contains(string(got), "failed-suite.json") {

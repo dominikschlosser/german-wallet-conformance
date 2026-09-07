@@ -76,7 +76,7 @@ func ExportFailureLogs(plans []ReportPlan, resultsDir, page string) error {
 			if settings != "" {
 				name = strings.TrimSuffix(name, " (deferred)") + " (" + settings + ")"
 			}
-			fmt.Fprintf(&rows, "| %s | [Result and logs](test-results/%s.md) |\n", cell(name), module.ID)
+			fmt.Fprintf(&rows, "| %s | %s | [Result and logs](test-results/%s.md) |\n", cell(name), cell(module.Verdict), module.ID)
 			files[module.ID+"-wallet.txt"] = data
 			files[module.ID+"-suite.json"] = suiteLog
 			files[module.ID+".md"] = []byte(fmt.Sprintf("# %s\n\n| | |\n| --- | --- |\n| Plan | `%s` |\n| Variant | `%s` |\n| Result | Failed |\n| Test instance | `%s` |\n\n- [Wallet log](%s-wallet.txt): app output from launch until this test ends.\n- [Suite log](%s-suite.json): the suite's full JSON export for the same test instance, including protocol exchanges and checks.\n\n[All failed tests](../%s)\n", cell(name), cell(plan.Name), cell(plan.Ref.Slug), module.ID, module.ID, module.ID, filepath.Base(page)))
@@ -88,7 +88,7 @@ func ExportFailureLogs(plans []ReportPlan, resultsDir, page string) error {
 			fmt.Fprintf(&doc, "## %s\n\n", cell(plan.Name))
 			planName = plan.Name
 		}
-		fmt.Fprintf(&doc, "### %s\n\n| Test | Result and logs |\n| --- | --- |\n%s\n", cell(plan.Ref.Slug), rows.String())
+		fmt.Fprintf(&doc, "### %s\n\n| Test | Result | Result and logs |\n| --- | --- | --- |\n%s\n", cell(plan.Ref.Slug), rows.String())
 	}
 	if len(files) == 0 {
 		fmt.Fprintln(&doc, "No Failed tests in this selection.")
@@ -138,7 +138,11 @@ func readSuiteLogs(path string) (map[string][]byte, error) {
 			return nil, fmt.Errorf("%s: %w", entry.Name, err)
 		}
 		if exported.TestInfo.ID != "" && len(exported.Results) > 0 {
-			logs[exported.TestInfo.ID] = data
+			var formatted bytes.Buffer
+			if err := json.Indent(&formatted, data, "", "  "); err != nil {
+				return nil, fmt.Errorf("%s: %w", entry.Name, err)
+			}
+			logs[exported.TestInfo.ID] = append(bytes.TrimRight(formatted.Bytes(), "\n"), '\n')
 		}
 	}
 	return logs, nil
