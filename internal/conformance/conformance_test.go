@@ -136,7 +136,8 @@ type testWallet struct {
 	submitDelay time.Duration
 }
 
-func (w *testWallet) Prepare(context.Context) error { w.prepared++; return nil }
+func (w *testWallet) Prepare(context.Context) error       { w.prepared++; return nil }
+func (w *testWallet) Log(context.Context) ([]byte, error) { return []byte("app log\n"), nil }
 
 func (w *testWallet) Submit(ctx context.Context, _, _, _ string) (string, error) {
 	w.submitted++
@@ -261,7 +262,7 @@ func TestRunnerDrivesOnceUploadsAndKeepsTerminalFailure(t *testing.T) {
 	defer server.Close()
 	runner := NewRunner(NewAPI(server.URL, ""), wallet, log.New(io.Discard, "", 0))
 	runner.PollInterval = time.Millisecond
-	info, err := runner.RunModule(context.Background(), "p", Module{Name: "test"})
+	info, err := runner.RunModule(context.Background(), "p", Module{Name: "test"}, t.TempDir())
 	if err != nil {
 		t.Fatal(err)
 	}
@@ -295,7 +296,7 @@ func TestDeferredModuleWaitsForWalletRetrieval(t *testing.T) {
 	runner.PollInterval = time.Millisecond
 	runner.ModuleTimeout = 100 * time.Millisecond
 	module := Module{Name: "deferred", Variant: Variant{"vci_credential_issuance_mode": "deferred"}}
-	info, err := runner.RunModule(context.Background(), "p", module)
+	info, err := runner.RunModule(context.Background(), "p", module, t.TempDir())
 	if err != nil || info.Verdict() != "PASSED" || wallet.submitted != 1 || polls < 4 {
 		t.Fatalf("info=%+v err=%v wallet=%+v polls=%d", info, err, wallet, polls)
 	}

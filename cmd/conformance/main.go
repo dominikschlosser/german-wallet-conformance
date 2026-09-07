@@ -33,7 +33,7 @@ func main() {
 }
 func execute(ctx context.Context, args []string) error {
 	if len(args) == 0 {
-		return fmt.Errorf("usage: conformance run|parallel|drive|proxy|report|screenshots")
+		return fmt.Errorf("usage: conformance run|parallel|drive|proxy|report|screenshots|test-logs")
 	}
 	f := flag.NewFlagSet(args[0], flag.ContinueOnError)
 	suite := f.String("suite", env("CONFORMANCE_SERVER", "https://localhost:8443"), "local suite URL")
@@ -62,10 +62,11 @@ func execute(ctx context.Context, args []string) error {
 			return err
 		}
 		return c.ServeProxy(ctx, *cert, *key, *port, *upstream)
-	case "report", "screenshots":
+	case "report", "screenshots", "test-logs":
 		only := f.String("only", env("ONLY_SCENARIOS", c.DefaultSelection), "include slugs containing these comma-separated strings")
 		details := f.Bool("details", false, "include module verdicts and first failures")
 		out := f.String("out", "docs/assets", "screenshot directory")
+		page := f.String("page", "docs/ios-test-logs.md", "failed test index page")
 		chrome := f.String("chrome", "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome", "Chrome executable")
 		if err := f.Parse(args[1:]); err != nil {
 			return err
@@ -84,6 +85,9 @@ func execute(ctx context.Context, args []string) error {
 		plans, err := c.ReadReport(ctx, c.NewAPI(*suite, os.Getenv("CONFORMANCE_TOKEN")), refs, *details)
 		if err != nil {
 			return err
+		}
+		if args[0] == "test-logs" {
+			return c.ExportFailureLogs(plans, filepath.Join(filepath.Dir(f.Arg(0)), "results"), *page)
 		}
 		c.WriteReport(os.Stdout, *suite, plans, *details)
 		return nil

@@ -89,7 +89,7 @@ Presentation requires stored suite credentials. Parallel setup issues them autom
 
 ## Results and screenshots
 
-The command prints the run directory. It contains `runner.log` for progress and app actions, and `results/` for configurations and suite logs. Parallel runs combine their logs when finished.
+The command prints the run directory. It contains `runner.log` for progress and app actions, and `results/` for configurations and suite logs. The app's own log is saved for each test in `results/wallet-logs/<test ID>.txt`. The runner clears the app log before each test. Parallel runs combine their runner logs when finished.
 
 Read the results or capture the suite overview:
 
@@ -97,9 +97,12 @@ Read the results or capture the suite overview:
 .build/bin/conformance report /path/to/runner.log
 .build/bin/conformance report --details /path/to/runner.log
 .build/bin/conformance screenshots /path/to/runner.log
+.build/bin/conformance test-logs /path/to/runner.log
 ```
 
 Reports use the latest result for each test. `--details` adds the first failed check. Screenshots go to `docs/assets`, with wallet screens from completed Review tests in `docs/assets/review`. Capture them after the tests finish, with the suite still running.
+
+`test-logs` creates `docs/ios-test-logs.md`, grouped by plan and variant. Each failed test has a page in `docs/test-results` linking its app log and the suite's JSON export. Both logs must be present and belong to the same test instance.
 
 Use `--only` to report or capture a different selection, for example `report --only vp-final /path/to/runner.log`. Use `--only ''` to include all supported variants in the log.
 

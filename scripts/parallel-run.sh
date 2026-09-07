@@ -64,9 +64,18 @@ else
 			"$CLI" run "${COMMON[@]}" --udid "$udid" --vci-alias "$alias" \
 				--shard-index "$shard" --shard-count "$VCI_WORKERS" \
 				--only "vci-final-$format-preauth-byval-immediate-plain" --exclude '' --rerun 1:1 --runner-log "$seed"
+			app=$(xcrun simctl get_app_container "$udid" "${BUNDLE_ID:-org.sprind.wallet.dev}" app)
 			xcrun simctl shutdown "$udid"
 			if [ -s "$seed" ]; then
 				vp_udid=$(xcrun simctl clone "$udid" "Wallet VP $format $(basename "$RUN_DIR")")
+				SIMULATORS+=("$vp_udid")
+				# Reinstall so the clone uses its own app container.
+				xcrun simctl boot "$vp_udid"
+				xcrun simctl bootstatus "$vp_udid" -b >/dev/null
+				xcrun simctl install "$vp_udid" "$app"
+				xcrun simctl launch "$vp_udid" "${BUNDLE_ID:-org.sprind.wallet.dev}" >/dev/null
+				xcrun simctl terminate "$vp_udid" "${BUNDLE_ID:-org.sprind.wallet.dev}"
+				xcrun simctl shutdown "$vp_udid"
 				printf 'vp-%s\t%s\t%s\t0\t1\n' "$format" "$vp_udid" "$alias" >>"$MANIFEST"
 			fi
 		done

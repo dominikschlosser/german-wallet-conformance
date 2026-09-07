@@ -12,6 +12,7 @@ import (
 	"net/url"
 	"os"
 	"os/exec"
+	"path/filepath"
 	"slices"
 	"strconv"
 	"strings"
@@ -52,6 +53,7 @@ type Driver struct {
 	onboarded           bool
 	needsRelaunch       bool
 	lastLabels          string
+	logFile             string
 }
 
 func command(ctx context.Context, name string, args ...string) ([]byte, error) {
@@ -492,7 +494,45 @@ func (d *Driver) Prepare(ctx context.Context) error {
 	}
 	d.needsRelaunch = false
 	d.onboarded = false
-	return ctx.Err()
+	path, err := d.appLogPath(ctx)
+	if err != nil {
+		return err
+	}
+	if err := os.WriteFile(path, nil, 0600); err != nil {
+		return err
+	}
+	d.logFile = path
+	return nil
+}
+
+func (d *Driver) appLogPath(ctx context.Context) (string, error) {
+	container, err := d.simctl(ctx, "get_app_container", d.UDID, d.BundleID, "data")
+	if err != nil {
+		return "", err
+	}
+	path := strings.TrimSpace(string(container))
+	if !filepath.IsAbs(path) {
+		return "", fmt.Errorf("invalid app container path %q", path)
+	}
+	home, err := d.simctl(ctx, "getenv", d.UDID, "HOME")
+	if err != nil {
+		return "", err
+	}
+	deviceHome := strings.TrimSpace(string(home))
+	if !filepath.IsAbs(deviceHome) || (path != deviceHome && !strings.HasPrefix(path, deviceHome+string(filepath.Separator))) {
+		return "", fmt.Errorf("app container does not belong to simulator %s: %s", d.UDID, path)
+	}
+	return filepath.Join(path, "Library", "Caches", "eudi-ios-wallet-logs.txt"), nil
+}
+
+func (d *Driver) Log(ctx context.Context) ([]byte, error) {
+	if err := ctx.Err(); err != nil {
+		return nil, err
+	}
+	if d.logFile == "" {
+		return nil, fmt.Errorf("wallet log capture has not started")
+	}
+	return os.ReadFile(d.logFile)
 }
 
 func (d *Driver) Shutdown() error {

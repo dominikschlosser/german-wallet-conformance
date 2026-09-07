@@ -1,0 +1,693 @@
+2026-09-07T14:56:00+0200 info WalletApp : [DEBUG] [PushNotificationController:46 requestAuthorizationAndRegister()] [Push] Notification permission granted: true
+2026-09-07T14:56:00+0200 error WalletApp : [ERROR] [SecureEnclaveController:214 retrieveStringFromKeychain(keyTag:)] Failed to retrieve value from Keychain: -25300
+2026-09-07T14:56:00+0200 info WalletStorage : Load documents with status: issued
+2026-09-07T14:56:00+0200 info WalletStorage : Keychain queryValue: org.sprind.wallet.dev.eudi.document.storage:pdoc:issued id: for save:false
+2026-09-07T14:56:00+0200 info WalletStorage : Keychain queryValue: Software:skei:issued id:5A23F1F7-ACE2-47D2-85C9-9E3DB2FFFE89 for save:false
+2026-09-07T14:56:00+0200 info WalletStorage : Load documents with status: deferred
+2026-09-07T14:56:00+0200 info WalletStorage : Keychain queryValue: org.sprind.wallet.dev.eudi.document.storage:pdoc:deferred id: for save:false
+2026-09-07T14:56:00+0200 info WalletStorage : Load documents with status: pending
+2026-09-07T14:56:00+0200 info WalletStorage : Keychain queryValue: org.sprind.wallet.dev.eudi.document.storage:pdoc:pending id: for save:false
+2026-09-07T14:56:01+0200 info WalletApp : [DEBUG] [NetworkManager:265 log(request:responseData:responseHeader:)] 
+
+==================== Network Request Begin ====================
+🔵 Request: https://localhost:8096/features?apiKey=REDACTED
+🔵 Method: GET
+🔵 Body: 
+🔵 Headers: 
+⛔️ Status: 404
+🟡 Response Headers: Date: Mon, 07 Sep 2026 12:56:01 GMT, Cache-Control: no-cache, no-store, max-age=0, must-revalidate, Content-Type: application/json, referrer-policy: no-referrer, x-frame-options: DENY, Pragma: no-cache, x-trace-id: eabbd80e9c33d8f045d61bd54cdac79c, Expires: 0, x-service-version: 2ac3984, Content-Length: 120, x-content-type-options: nosniff, x-xss-protection: 0
+🟡 Response Body: {
+  "error" : "Not Found",
+  "path" : "\/features",
+  "requestId" : "9430349d-1560",
+  "status" : 404,
+  "timestamp" : "2026-09-07T12:56:01.114Z"
+}
+==================== Network Request End ====================
+
+2026-09-07T14:56:01+0200 info WalletApp : [DEBUG] [NetworkManager:265 log(request:responseData:responseHeader:)] 
+
+==================== Network Request Begin ====================
+🔵 Request: https://localhost:8096/features?apiKey=REDACTED
+🔵 Method: GET
+🔵 Body: 
+🔵 Headers: 
+⛔️ Status: 404
+🟡 Response Headers: x-xss-protection: 0, Content-Type: application/json, x-trace-id: e99e862068ce37d0d1b1c01d37880127, x-content-type-options: nosniff, Content-Length: 120, referrer-policy: no-referrer, Cache-Control: no-cache, no-store, max-age=0, must-revalidate, Date: Mon, 07 Sep 2026 12:56:01 GMT, x-service-version: 2ac3984, Expires: 0, x-frame-options: DENY, Pragma: no-cache
+🟡 Response Body: {
+  "error" : "Not Found",
+  "path" : "\/features",
+  "requestId" : "3d3f6631-1561",
+  "status" : 404,
+  "timestamp" : "2026-09-07T12:56:01.116Z"
+}
+==================== Network Request End ====================
+
+2026-09-07T14:56:01+0200 error WalletApp : [ERROR] [UpdateService:33 refreshFlagsIfNeeded()] Feature flag refresh failed: FlagError [logic_feature_flags.FlagError#2]
+2026-09-07T14:56:01+0200 error WalletApp : [ERROR] [UpdateService:33 refreshFlagsIfNeeded()] Feature flag refresh failed: FlagError [logic_feature_flags.FlagError#2]
+2026-09-07T14:56:02+0200 info WalletApp : [DEBUG] [RouterHost:175 onNavigationFollowUp(with:)] [NAV] Dashboard
+2026-09-07T14:56:02+0200 error WalletApp : [ERROR] [SecureEnclaveController:214 retrieveStringFromKeychain(keyTag:)] Failed to retrieve value from Keychain: -25300
+2026-09-07T14:56:02+0200 info WalletApp : [DEBUG] [PNSAccountInteractor:86 sync(with:)] [PNS] no mpp_registration_token yet, skipping account sync
+2026-09-07T14:56:12+0200 info WalletApp : [DEBUG] [PrefsController:63 remove(forKey:)] [STORAGE] clear key=cachedDeepLink dest=userDefaults
+2026-09-07T14:56:12+0200 info WalletApp : [DEBUG] [RouterHost:175 onNavigationFollowUp(with:)] [NAV] credentialOfferConsentView
+2026-09-07T14:56:12+0200 info WalletApp : [DEBUG] [PinnedCertificateNetworking:52 data(for:)] 
+
+==================== Network Request Begin ====================
+🔵 Request: https://localhost:8443/.well-known/openid-credential-issuer/test/a/wallet-vci-sdjwt-3/
+🔵 Method: GET
+🔵 Body: 
+🔵 Headers: Accept: application/json
+✅ Status: 200
+🟡 Response Headers: Cache-Control: no-cache, no-store, max-age=0, must-revalidate, Connection: keep-alive, Expires: 0, Vary: origin,access-control-request-method,access-control-request-headers,accept-encoding, X-Content-Type-Options: nosniff, Set-Cookie: REDACTED, Server: nginx/1.27.3, Date: Mon, 07 Sep 2026 12:56:12 GMT, Content-Encoding: gzip, Content-Type: application/json, X-Frame-Options: SAMEORIGIN, Pragma: no-cache, Transfer-Encoding: Identity, X-XSS-Protection: 0, Strict-Transport-Security: max-age=31536000 ; includeSubDomains
+🟡 Response Body: {
+  "authorization_servers" : [
+    "https:\/\/localhost:8443\/test\/a\/wallet-vci-sdjwt-3\/"
+  ],
+  "credential_configurations_supported" : {
+    "eu.europa.ec.eudi.pid.1" : {
+      "credential_metadata" : {
+        "display" : [
+          {
+            "description" : "OpenID Conformance Test Fake PID description",
+            "name" : "Fake PID BPQiwsUCMiWyYrI"
+          }
+        ]
+      },
+      "credential_signing_alg_values_supported" : [
+        "ES256"
+      ],
+      "cryptographic_binding_methods_supported" : [
+        "jwk"
+      ],
+      "format" : "dc+sd-jwt",
+      "proof_types_supported" : {
+        "jwt" : {
+          "proof_signing_alg_values_supported" : [
+            "ES256"
+          ]
+        }
+      },
+      "scope" : "eudi.pid.1",
+      "vct" : "urn:eudi:pid:1"
+    },
+    "eu.europa.ec.eudi.pid.1.attestation" : {
+      "credential_metadata" : {
+        "display" : [
+          {
+            "description" : "OpenID Conformance Test Fake PID description",
+            "name" : "Fake PID: Attestation BPQiwsUCMiWyYrI"
+          }
+        ]
+      },
+      "credential_signing_alg_values_supported" : [
+        "ES256"
+      ],
+      "cryptographic_binding_methods_supported" : [
+        "jwk"
+      ],
+      "format" : "dc+sd-jwt",
+      "proof_types_supported" : {
+        "attestation" : {
+          "proof_signing_alg_values_supported" : [
+            "ES256"
+          ]
+        }
+      },
+      "scope" : "eudi.pid.1.attestation",
+      "vct" : "urn:eudi:pid:1"
+    },
+    "eu.europa.ec.eudi.pid.1.attestation.keyattest" : {
+      "credential_metadata" : {
+        "display" : [
+          {
+            "description" : "OpenID Conformance Test Fake PID description",
+            "name" : "Fake PID: Attestation Proof with Key Attestation BPQiwsUCMiWyYrI"
+          }
+        ]
+      },
+      "credential_signing_alg_values_supported" : [
+        "ES256"
+      ],
+      "cryptographic_binding_methods_supported" : [
+        "jwk"
+      ],
+      "format" : "dc+sd-jwt",
+      "proof_types_supported" : {
+        "attestation" : {
+          "key_attestations_required" : {
+
+          },
+          "proof_signing_alg_values_supported" : [
+            "ES256"
+          ]
+        }
+      },
+      "scope" : "eudi.pid.1.attestation.keyattest",
+      "vct" : "urn:eudi:pid:1"
+    },
+    "eu.europa.ec.eudi.pid.1.jwt_and_attestation.keyattest" : {
+      "credential_metadata" : {
+        "display" : [
+          {
+            "description" : "OpenID Conformance Test Fake PID description",
+            "name" : "Fake PID: JWT and Attestation Proof with Key Attestation BPQiwsUCMiWyYrI"
+          }
+        ]
+      },
+      "credential_signing_alg_values_supported" : [
+        "ES256"
+      ],
+      "cryptographic_binding_methods_supported" : [
+        "jwk"
+      ],
+      "format" : "dc+sd-jwt",
+      "proof_types_supported" : {
+        "attestation" : {
+          "key_attestations_required" : {
+
+          },
+          "proof_signing_alg_values_supported" : [
+            "ES256"
+          ]
+        },
+        "jwt" : {
+          "key_attestations_required" : {
+
+          },
+          "proof_signing_alg_values_supported" : [
+            "ES256"
+          ]
+        }
+      },
+      "scope" : "eudi.pid.1.jwt_and_attestation.keyattest",
+      "vct" : "urn:eudi:pid:1"
+    },
+    "eu.europa.ec.eudi.pid.1.jwt.keyattest" : {
+      "credential_metadata" : {
+        "display" : [
+          {
+            "description" : "OpenID Conformance Test Fake PID description",
+            "name" : "Fake PID: JWT Proof with Key Attestation BPQiwsUCMiWyYrI"
+          }
+        ]
+      },
+      "credential_signing_alg_values_supported" : [
+        "ES256"
+      ],
+      "cryptographic_binding_methods_supported" : [
+        "jwk"
+      ],
+      "format" : "dc+sd-jwt",
+      "proof_types_supported" : {
+        "jwt" : {
+          "key_attestations_required" : {
+
+          },
+          "proof_signing_alg_values_supported" : [
+            "ES256"
+          ]
+        }
+      },
+      "scope" : "eudi.pid.1.jwt.keyattest",
+      "vct" : "urn:eudi:pid:1"
+    },
+    "eu.europa.ec.eudi.pid.1.nobinding" : {
+      "credential_metadata" : {
+        "display" : [
+          {
+            "description" : "OpenID Conformance Test Fake PID without cryptographic holder binding",
+            "name" : "Fake PID (No Holder Binding) BPQiwsUCMiWyYrI"
+          }
+        ]
+      },
+      "credential_signing_alg_values_supported" : [
+        "ES256"
+      ],
+      "format" : "dc+sd-jwt",
+      "scope" : "eudi.pid.1.nobinding",
+      "vct" : "urn:eudi:pid:1"
+    },
+    "eu.europa.ec.eudi.pid.mdoc.1" : {
+      "credential_metadata" : {
+        "display" : [
+          {
+            "description" : "OpenID Conformance Test Fake PID in mso_mdoc format",
+            "name" : "Fake PID (mdoc) BPQiwsUCMiWyYrI"
+          }
+        ]
+      },
+      "credential_signing_alg_values_supported" : [
+        -7
+      ],
+      "cryptographic_binding_methods_supported" : [
+        "cose_key"
+      ],
+      "doctype" : "eu.europa.ec.eudi.pid.1",
+      "format" : "mso_mdoc",
+      "proof_types_supported" : {
+        "jwt" : {
+          "proof_signing_alg_values_supported" : [
+            "ES256"
+          ]
+        }
+      },
+      "scope" : "eudi.pid.mdoc.1"
+    },
+    "eu.europa.ec.eudi.pid.mdoc.1.attestation" : {
+      "credential_metadata" : {
+        "display" : [
+          {
+            "description" : "OpenID Conformance Test Fake PID in mso_mdoc format",
+            "name" : "Fake PID (mdoc): Attestation BPQiwsUCMiWyYrI"
+          }
+        ]
+      },
+      "credential_signing_alg_values_supported" : [
+        -7
+      ],
+      "cryptographic_binding_methods_supported" : [
+        "cose_key"
+      ],
+      "doctype" : "eu.europa.ec.eudi.pid.1",
+      "format" : "mso_mdoc",
+      "proof_types_supported" : {
+        "attestation" : {
+          "proof_signing_alg_values_supported" : [
+            "ES256"
+          ]
+        }
+      },
+      "scope" : "eudi.pid.mdoc.1.attestation"
+    },
+    "eu.europa.ec.eudi.pid.mdoc.1.attestation.keyattest" : {
+      "credential_metadata" : {
+        "display" : [
+          {
+            "description" : "OpenID Conformance Test Fake PID in mso_mdoc format",
+            "name" : "Fake PID (mdoc): Attestation Proof with Key Attestation BPQiwsUCMiWyYrI"
+          }
+        ]
+      },
+      "credential_signing_alg_values_supported" : [
+        -7
+      ],
+      "cryptographic_binding_methods_supported" : [
+        "cose_key"
+      ],
+      "doctype" : "eu.europa.ec.eudi.pid.1",
+      "format" : "mso_mdoc",
+      "proof_types_supported" : {
+        "attestation" : {
+          "key_attestations_required" : {
+
+          },
+          "proof_signing_alg_values_supported" : [
+            "ES256"
+          ]
+        }
+      },
+      "scope" : "eudi.pid.mdoc.1.attestation.keyattest"
+    },
+    "eu.europa.ec.eudi.pid.mdoc.1.jwt.keyattest" : {
+      "credential_metadata" : {
+        "display" : [
+          {
+            "description" : "OpenID Conformance Test Fake PID in mso_mdoc format",
+            "name" : "Fake PID (mdoc): JWT Proof with Key Attestation BPQiwsUCMiWyYrI"
+          }
+        ]
+      },
+      "credential_signing_alg_values_supported" : [
+        -7
+      ],
+      "cryptographic_binding_methods_supported" : [
+        "cose_key"
+      ],
+      "doctype" : "eu.europa.ec.eudi.pid.1",
+      "format" : "mso_mdoc",
+      "proof_types_supported" : {
+        "jwt" : {
+          "key_attestations_required" : {
+
+          },
+          "proof_signing_alg_values_supported" : [
+            "ES256"
+          ]
+        }
+      },
+      "scope" : "eudi.pid.mdoc.1.jwt.keyattest"
+    },
+    "net.openid.examples.certification.1.mdoc" : {
+      "credential_metadata" : {
+        "display" : [
+          {
+            "description" : "OpenID Conformance Test Fake Certification",
+            "name" : "Fake OpenID Certification (mdoc) BPQiwsUCMiWyYrI"
+          }
+        ]
+      },
+      "credential_signing_alg_values_supported" : [
+        -7
+      ],
+      "cryptographic_binding_methods_supported" : [
+        "cose_key"
+      ],
+      "doctype" : "net.openid.examples.certification.1.mdoc",
+      "format" : "mso_mdoc",
+      "proof_types_supported" : {
+        "attestation" : {
+          "proof_signing_alg_values_supported" : [
+            "ES256"
+          ]
+        }
+      },
+      "scope" : "openid.example.cert.1"
+    },
+    "net.openid.examples.certification.1.sdjwtvc" : {
+      "credential_metadata" : {
+        "display" : [
+          {
+            "description" : "OpenID Conformance Test Fake Certification",
+            "name" : "Fake OpenID Certification BPQiwsUCMiWyYrI"
+          }
+        ]
+      },
+      "credential_signing_alg_values_supported" : [
+        "ES256"
+      ],
+      "cryptographic_binding_methods_supported" : [
+        "jwk"
+      ],
+      "format" : "dc+sd-jwt",
+      "proof_types_supported" : {
+        "attestation" : {
+          "proof_signing_alg_values_supported" : [
+            "ES256"
+          ]
+        }
+      },
+      "scope" : "openid.example.cert.1",
+      "vct" : "urn:openid:example:certification:1"
+    },
+    "org.iso.18013.5.1.mDL" : {
+      "credential_metadata" : {
+        "display" : [
+          {
+            "description" : "OpenID Conformance Test Fake Mobile Driver's License",
+            "name" : "Fake mDL (ISO 18013-5) BPQiwsUCMiWyYrI"
+          }
+        ]
+      },
+      "credential_signing_alg_values_supported" : [
+        -7
+      ],
+      "cryptographic_binding_methods_supported" : [
+        "cose_key"
+      ],
+      "doctype" : "org.iso.18013.5.1.mDL",
+      "format" : "mso_mdoc",
+      "proof_types_supported" : {
+        "jwt" : {
+          "proof_signing_alg_values_supported" : [
+            "ES256"
+          ]
+        }
+      },
+      "scope" : "org.iso.18013.5.1.mDL"
+    },
+    "org.iso.18013.5.1.mDL.attestation" : {
+      "credential_metadata" : {
+        "display" : [
+          {
+            "description" : "OpenID Conformance Test Fake Mobile Driver's License",
+            "name" : "Fake mDL (ISO 18013-5): Attestation BPQiwsUCMiWyYrI"
+          }
+        ]
+      },
+      "credential_signing_alg_values_supported" : [
+        -7
+      ],
+      "cryptographic_binding_methods_supported" : [
+        "cose_key"
+      ],
+      "doctype" : "org.iso.18013.5.1.mDL",
+      "format" : "mso_mdoc",
+      "proof_types_supported" : {
+        "attestation" : {
+          "proof_signing_alg_values_supported" : [
+            "ES256"
+          ]
+        }
+      },
+      "scope" : "org.iso.18013.5.1.mDL.attestation"
+    },
+    "wallet-test-sdjwt" : {
+      "credential_metadata" : {
+        "display" : [
+          {
+            "description" : "OpenID Conformance Test Fake PID description",
+            "name" : "Fake PID BPQiwsUCMiWyYrI"
+          }
+        ]
+      },
+      "credential_signing_alg_values_supported" : [
+        "ES256"
+      ],
+      "cryptographic_binding_methods_supported" : [
+        "jwk"
+      ],
+      "format" : "dc+sd-jwt",
+      "proof_types_supported" : {
+        "jwt" : {
+          "proof_signing_alg_values_supported" : [
+            "ES256"
+          ]
+        }
+      },
+      "scope" : "wallet-test-sdjwt",
+      "vct" : "urn:eudi:pid:1"
+    }
+  },
+  "credential_endpoint" : "https:\/\/localhost:8443\/test\/a\/wallet-vci-sdjwt-3\/credential",
+  "credential_issuer" : "https:\/\/localhost:8443\/test\/a\/wallet-vci-sdjwt-3\/",
+  "nonce_endpoint" : "https:\/\/localhost:8443\/test\/a\/wallet-vci-sdjwt-3\/nonce",
+  "notification_endpoint" : "https:\/\/localhost:8443\/test\/a\/wallet-vci-sdjwt-3\/notification"
+}
+==================== Network Request End ====================
+
+2026-09-07T14:56:12+0200 info WalletApp : [DEBUG] [PinnedCertificateNetworking:52 data(for:)] 
+
+==================== Network Request Begin ====================
+🔵 Request: https://localhost:8443/.well-known/oauth-authorization-server/test/a/wallet-vci-sdjwt-3
+🔵 Method: GET
+🔵 Body: 
+🔵 Headers: 
+✅ Status: 200
+🟡 Response Headers: Pragma: no-cache, X-Frame-Options: SAMEORIGIN, Content-Type: application/json;charset=UTF-8, X-Content-Type-Options: nosniff, Cache-Control: no-cache, no-store, max-age=0, must-revalidate, Connection: keep-alive, Date: Mon, 07 Sep 2026 12:56:12 GMT, Vary: origin,access-control-request-method,access-control-request-headers,accept-encoding, X-XSS-Protection: 0, Server: nginx/1.27.3, Expires: 0, Strict-Transport-Security: max-age=31536000 ; includeSubDomains, Transfer-Encoding: Identity
+🟡 Response Body: {
+  "authorization_endpoint" : "https:\/\/localhost:8443\/test\/a\/wallet-vci-sdjwt-3\/authorize",
+  "authorization_response_iss_parameter_supported" : true,
+  "client_attestation_pop_signing_alg_values_supported" : [
+    "ES256"
+  ],
+  "client_attestation_signing_alg_values_supported" : [
+    "ES256"
+  ],
+  "code_challenge_methods_supported" : [
+    "S256"
+  ],
+  "dpop_signing_alg_values_supported" : [
+    "PS256",
+    "ES256",
+    "EdDSA",
+    "Ed25519"
+  ],
+  "id_token_signing_alg_values_supported" : [
+    "PS256"
+  ],
+  "issuer" : "https:\/\/localhost:8443\/test\/a\/wallet-vci-sdjwt-3\/",
+  "pushed_authorization_request_endpoint" : "https:\/\/localhost:8443\/test\/a\/wallet-vci-sdjwt-3\/par",
+  "registration_endpoint" : "https:\/\/localhost:8443\/test\/a\/wallet-vci-sdjwt-3\/register",
+  "require_pushed_authorization_requests" : true,
+  "response_types_supported" : [
+    "code"
+  ],
+  "status_list_aggregation_endpoint" : "https:\/\/localhost:8443\/test\/a\/wallet-vci-sdjwt-3\/statuslists",
+  "token_endpoint" : "https:\/\/localhost:8443\/test\/a\/wallet-vci-sdjwt-3\/token",
+  "token_endpoint_auth_methods_supported" : [
+    "attest_jwt_client_auth"
+  ],
+  "token_endpoint_auth_signing_alg_values_supported" : [
+    "PS256",
+    "ES256",
+    "EdDSA",
+    "Ed25519"
+  ],
+  "userinfo_endpoint" : "https:\/\/localhost:8443\/test\/a\/wallet-vci-sdjwt-3\/userinfo"
+}
+==================== Network Request End ====================
+
+2026-09-07T14:56:14+0200 info WalletApp : [DEBUG] [RouterHost:175 onNavigationFollowUp(with:)] [NAV] documentLoaderView
+2026-09-07T14:56:14+0200 info OpenId4VCI : sdJwtVc with vct urn:eudi:pid:1, identifier: wallet-test-sdjwt, cryptographic suites: ["ES256"]
+2026-09-07T14:56:14+0200 info EudiWalletKit : Signing algorithm for DPoP constructor to be used is: ES256
+2026-09-07T14:56:14+0200 info EudiWalletKit : Signing algorithm for DPoP constructor to be used is: ES256
+2026-09-07T14:56:14+0200 info WalletApp : [DEBUG] [NetworkManager:265 log(request:responseData:responseHeader:)] 
+
+==================== Network Request Begin ====================
+🔵 Request: https://localhost:8096/v1/wpb/challenge
+🔵 Method: POST
+🔵 Body: 
+🔵 Headers: X-Auth-Token: REDACTED
+✅ Status: 200
+🟡 Response Headers: Pragma: no-cache, Content-Type: application/json, Date: Mon, 07 Sep 2026 12:56:14 GMT, Expires: 0, Content-Length: 279, x-trace-id: c3b23a045ce98bf0b9476bc289e0f92d, x-frame-options: DENY, x-content-type-options: nosniff, referrer-policy: no-referrer, Cache-Control: no-cache, no-store, max-age=0, must-revalidate, x-xss-protection: 0, x-service-version: 2ac3984
+🟡 Response Body: {
+  "wpb_auth_challenge" : "REDACTED"
+}
+==================== Network Request End ====================
+
+2026-09-07T14:56:14+0200 info WalletApp : [DEBUG] [NetworkManager:265 log(request:responseData:responseHeader:)] 
+
+==================== Network Request Begin ====================
+🔵 Request: https://localhost:8096/v1/wpb/attestation
+🔵 Method: POST
+🔵 Body: {
+  "wi_wia_pubk" : "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAElVRrXgg1EJaLjbR4IzB9OwbE7LYprlsDsNGLwNK19nEbw1PR+YHzNi1Se2h8vG49cnt4G0b8KsS9lNZL5SVdTQ=="
+}
+🔵 Headers: Signature-Input: REDACTED, mdvm-token: REDACTED, Content-Type: application/json, Signature: REDACTED, Content-Digest: sha-256=:akKya6Ttm2m3ruOY4/sAUcJet+xkItAl+ZBy9tRejlE=:, auth-challenge: REDACTED, wpb-wi-id: REDACTED, X-Auth-Token: REDACTED
+✅ Status: 200
+🟡 Response Headers: x-content-type-options: nosniff, Content-Type: application/json, x-service-version: 2ac3984, x-frame-options: DENY, Pragma: no-cache, x-trace-id: 89dd6aef5a39bdff487b43675b8e1bbc, x-xss-protection: 0, Expires: 0, Date: Mon, 07 Sep 2026 12:56:14 GMT, Cache-Control: no-cache, no-store, max-age=0, must-revalidate, referrer-policy: no-referrer, Content-Length: 1646
+🟡 Response Body: {
+  "wpb_client_instance_id" : "0f82f4a4-a64a-4e69-ad4c-52c94a3db78a",
+  "wpb_wia" : "REDACTED"
+}
+==================== Network Request End ====================
+
+2026-09-07T14:56:14+0200 info OpenId4VCI : --> [AUTHORIZATION] Placing Request to AS server's endpoint https://localhost:8443/test/a/wallet-vci-sdjwt-3/par
+2026-09-07T14:56:14+0200 info WalletApp : [DEBUG] [PinnedCertificateNetworking:52 data(for:)] 
+
+==================== Network Request Begin ====================
+🔵 Request: https://localhost:8443/test/a/wallet-vci-sdjwt-3/par
+🔵 Method: POST
+🔵 Body: response_type=code&client_id=local-german-wallet&=&state=eoqsGaJlrOBEUEz67RSO6jQvmlgXXCap&code_challenge=xjtXPKKJQa4VuN-aST-qkvDdGtR-KvYWoDnUV7E20Hs&issuer_state=etlIhbaUKkioZTVuLHgLBvtsOIgcBUUpaNbLItrBRi&redirect_uri=org.sprind.wallet.dev:/authorization&resource=https://localhost:8443/test/a/wallet-vci-sdjwt-3/&scope=wallet-test-sdjwt&code_challenge_method=S256
+🔵 Headers: OAuth-Client-Attestation: REDACTED, OAuth-Client-Attestation-PoP: REDACTED, Content-Type: application/x-www-form-urlencoded, DPoP: REDACTED
+⛔️ Status: 400
+🟡 Response Headers: Vary: origin,access-control-request-method,access-control-request-headers,accept-encoding, Strict-Transport-Security: max-age=31536000 ; includeSubDomains, DPoP-Nonce: HhcMEQKGxbucrTESWzMrMxcpPEdFjnoctgQGajbvXKkKXgfStO4806339316;:>[~|.-]<[>:@~/;&#=,/,^`,<:%!, Content-Type: application/json;charset=UTF-8, Connection: keep-alive, Expires: 0, X-Content-Type-Options: nosniff, Content-Encoding: gzip, Date: Mon, 07 Sep 2026 12:56:14 GMT, X-XSS-Protection: 0, Server: nginx/1.27.3, Transfer-Encoding: Identity, Pragma: no-cache, Cache-Control: no-cache, no-store, max-age=0, must-revalidate, X-Frame-Options: SAMEORIGIN
+🟡 Response Body: {
+  "error" : "use_dpop_nonce",
+  "error_description" : "Authorization server requires nonce in DPoP proof"
+}
+==================== Network Request End ====================
+
+2026-09-07T14:56:14+0200 info WalletApp : [DEBUG] [PinnedCertificateNetworking:52 data(for:)] 
+
+==================== Network Request Begin ====================
+🔵 Request: https://localhost:8443/test/a/wallet-vci-sdjwt-3/par
+🔵 Method: POST
+🔵 Body: resource=https://localhost:8443/test/a/wallet-vci-sdjwt-3/&scope=wallet-test-sdjwt&=&response_type=code&code_challenge_method=S256&issuer_state=etlIhbaUKkioZTVuLHgLBvtsOIgcBUUpaNbLItrBRi&client_id=local-german-wallet&redirect_uri=org.sprind.wallet.dev:/authorization&code_challenge=9biRUu5gi2SUVBnqEzcUvlNHXaHYt-TEThoKaYvgc_A&state=eoqsGaJlrOBEUEz67RSO6jQvmlgXXCap
+🔵 Headers: DPoP: REDACTED, Content-Type: application/x-www-form-urlencoded, OAuth-Client-Attestation: REDACTED, OAuth-Client-Attestation-PoP: REDACTED
+✅ Status: 201
+🟡 Response Headers: DPoP-Nonce: HhcMEQKGxbucrTESWzMrMxcpPEdFjnoctgQGajbvXKkKXgfStO4806339316;:>[~|.-]<[>:@~/;&#=,/,^`,<:%!, X-Content-Type-Options: nosniff, Pragma: no-cache, Connection: keep-alive, Transfer-Encoding: Identity, Expires: 0, Content-Encoding: gzip, Vary: origin,access-control-request-method,access-control-request-headers,accept-encoding, X-Frame-Options: SAMEORIGIN, Strict-Transport-Security: max-age=31536000 ; includeSubDomains, Server: nginx/1.27.3, Cache-Control: no-cache, no-store, max-age=0, must-revalidate, Content-Type: application/json;charset=UTF-8, X-XSS-Protection: 0, Date: Mon, 07 Sep 2026 12:56:14 GMT
+🟡 Response Body: {
+  "expires_in" : 600,
+  "request_uri" : "urn:ietf:params:oauth:request_uri:541c6976-c575-4daa-9023-edec58c3a284"
+}
+==================== Network Request End ====================
+
+2026-09-07T14:56:14+0200 info OpenId4VCI : --> [AUTHORIZATION] Placed Request. Authorization code URL is: AuthorizationCodeURL(url: https://localhost:8443/test/a/wallet-vci-sdjwt-3/authorize?client_id=local-german-wallet&state=eoqsGaJlrOBEUEz67RSO6jQvmlgXXCap&request_uri=urn:ietf:params:oauth:request_uri:541c6976-c575-4daa-9023-edec58c3a284)
+2026-09-07T14:56:16+0200 info WalletApp : [DEBUG] [NetworkManager:265 log(request:responseData:responseHeader:)] 
+
+==================== Network Request Begin ====================
+🔵 Request: https://localhost:8096/features?apiKey=REDACTED
+🔵 Method: GET
+🔵 Body: 
+🔵 Headers: 
+⛔️ Status: 404
+🟡 Response Headers: Pragma: no-cache, x-content-type-options: nosniff, Content-Length: 120, referrer-policy: no-referrer, x-frame-options: DENY, Content-Type: application/json, x-trace-id: 8fc85b8bb837b98718107ba7459a04b3, x-xss-protection: 0, Cache-Control: no-cache, no-store, max-age=0, must-revalidate, Date: Mon, 07 Sep 2026 12:56:16 GMT, Expires: 0, x-service-version: 2ac3984
+🟡 Response Body: {
+  "error" : "Not Found",
+  "path" : "\/features",
+  "requestId" : "3d3f6631-1578",
+  "status" : 404,
+  "timestamp" : "2026-09-07T12:56:16.495Z"
+}
+==================== Network Request End ====================
+
+2026-09-07T14:56:16+0200 error WalletApp : [ERROR] [UpdateService:33 refreshFlagsIfNeeded()] Feature flag refresh failed: FlagError [logic_feature_flags.FlagError#2]
+2026-09-07T14:56:16+0200 info OpenId4VCI : Authorization code: lJbSKclgadYK9uUYeCg56H5fZGM7bgU6
+2026-09-07T14:56:16+0200 info OpenId4VCI : --> [AUTHORIZATION] Authorization code retrieved
+2026-09-07T14:56:16+0200 info WalletApp : [DEBUG] [PinnedCertificateNetworking:52 data(for:)] 
+
+==================== Network Request Begin ====================
+🔵 Request: https://localhost:8443/test/a/wallet-vci-sdjwt-3/token
+🔵 Method: POST
+🔵 Body: code=REDACTED&client_id=local-german-wallet&redirect_uri=org.sprind.wallet.dev:/authorization&grant_type=authorization_code&code_verifier=REDACTED
+🔵 Headers: OAuth-Client-Attestation-PoP: REDACTED, OAuth-Client-Attestation: REDACTED, DPoP: REDACTED, Content-Type: application/x-www-form-urlencoded
+⛔️ Status: 400
+🟡 Response Headers: DPoP-Nonce: XWgrihKXJEIphrWpWkAuagBvGINJeFJEjwizPbQYRgFIHYHqkR5924610698/}#/'[,+>[(]$^',#_~{*>=}@__`;%, X-Content-Type-Options: nosniff, Pragma: no-cache, Connection: keep-alive, Transfer-Encoding: Identity, Expires: 0, Content-Encoding: gzip, Vary: origin,access-control-request-method,access-control-request-headers,accept-encoding, X-Frame-Options: SAMEORIGIN, Strict-Transport-Security: max-age=31536000 ; includeSubDomains, Server: nginx/1.27.3, Cache-Control: no-cache, no-store, max-age=0, must-revalidate, Content-Type: application/json;charset=UTF-8, X-XSS-Protection: 0, Date: Mon, 07 Sep 2026 12:56:16 GMT
+🟡 Response Body: {
+  "error" : "use_dpop_nonce",
+  "error_description" : "Authorization server requires nonce in DPoP proof"
+}
+==================== Network Request End ====================
+
+2026-09-07T14:56:16+0200 info WalletApp : [DEBUG] [PinnedCertificateNetworking:52 data(for:)] 
+
+==================== Network Request Begin ====================
+🔵 Request: https://localhost:8443/test/a/wallet-vci-sdjwt-3/token
+🔵 Method: POST
+🔵 Body: code_verifier=REDACTED&client_id=local-german-wallet&code=REDACTED&grant_type=authorization_code&redirect_uri=org.sprind.wallet.dev:/authorization
+🔵 Headers: OAuth-Client-Attestation-PoP: REDACTED, OAuth-Client-Attestation: REDACTED, DPoP: REDACTED, Content-Type: application/x-www-form-urlencoded
+✅ Status: 200
+🟡 Response Headers: DPoP-Nonce: XWgrihKXJEIphrWpWkAuagBvGINJeFJEjwizPbQYRgFIHYHqkR5924610698/}#/'[,+>[(]$^',#_~{*>=}@__`;%, Expires: 0, Date: Mon, 07 Sep 2026 12:56:16 GMT, Strict-Transport-Security: max-age=31536000 ; includeSubDomains, Transfer-Encoding: Identity, Cache-Control: no-cache, no-store, max-age=0, must-revalidate, Vary: origin,access-control-request-method,access-control-request-headers,accept-encoding, Content-Type: application/json;charset=UTF-8, Server: nginx/1.27.3, X-Content-Type-Options: nosniff, Connection: keep-alive, Pragma: no-cache, X-Frame-Options: SAMEORIGIN, Content-Encoding: gzip, X-XSS-Protection: 0
+🟡 Response Body: {
+  "access_token" : "REDACTED",
+  "expires_in" : 900,
+  "refresh_token" : "REDACTED",
+  "scope" : "wallet-test-sdjwt",
+  "token_type" : "dpOp"
+}
+==================== Network Request End ====================
+
+2026-09-07T14:56:16+0200 info OpenId4VCI : --> [AUTHORIZATION] Authorization code exchanged with access token : IssuanceAccessToken(expiresIn: Optional(900.0), accessToken: "QRuG01jnq5FM9WVwVtZzARF1m42sHFvoz4cQ19igEqMxqGsaPv", tokenType: Optional(OpenID4VCI.TokenType.bearer))
+2026-09-07T14:56:16+0200 info WalletStorage : Keychain queryValue: Software:skei:issued id:D52EE942-2A0B-474B-B576-94D5AA02DD43 for save:true
+2026-09-07T14:56:16+0200 info WalletStorage : Keychain queryValue: Software:skey:issued id:D52EE942-2A0B-474B-B576-94D5AA02DD43_0 for save:true
+2026-09-07T14:56:16+0200 info MdocDataModel18013 : Unlocking key with id: D52EE942-2A0B-474B-B576-94D5AA02DD43
+2026-09-07T14:56:16+0200 info OpenId4VCI : Starting issuing with identifer wallet-test-sdjwt, scope wallet-test-sdjwt, displayName: Fake PID BPQiwsUCMiWyYrI
+2026-09-07T14:56:16+0200 info WalletApp : [DEBUG] [PinnedCertificateNetworking:52 data(for:)] 
+
+==================== Network Request Begin ====================
+🔵 Request: https://localhost:8443/test/a/wallet-vci-sdjwt-3/nonce
+🔵 Method: POST
+🔵 Body: 
+🔵 Headers: 
+✅ Status: 200
+🟡 Response Headers: X-Content-Type-Options: nosniff, Connection: keep-alive, Transfer-Encoding: Identity, x-fapi-interaction-id: 9fc56ddb-5885-47d8-b6f7-3c99997a89c7, Content-Encoding: gzip, Vary: origin,access-control-request-method,access-control-request-headers,accept-encoding, Strict-Transport-Security: max-age=31536000 ; includeSubDomains, X-Frame-Options: SAMEORIGIN, Server: nginx/1.27.3, Cache-Control: no-store, Content-Type: application/json, X-XSS-Protection: 0, Date: Mon, 07 Sep 2026 12:56:16 GMT
+🟡 Response Body: {
+  "c_nonce" : "REDACTED"
+}
+==================== Network Request End ====================
+
+2026-09-07T14:56:16+0200 info EudiWalletKit : Sign async JWT in secure area Software
+2026-09-07T14:56:16+0200 info WalletStorage : Keychain queryValue: Software:skey:issued id:D52EE942-2A0B-474B-B576-94D5AA02DD43_0 for save:false
+2026-09-07T14:56:16+0200 info MdocSecurity18013 : Creating signature with ES256 for id: D52EE942-2A0B-474B-B576-94D5AA02DD43, key index 0
+2026-09-07T14:56:16+0200 info WalletApp : [DEBUG] [PinnedCertificateNetworking:52 data(for:)] 
+
+==================== Network Request Begin ====================
+🔵 Request: https://localhost:8443/test/a/wallet-vci-sdjwt-3/credential
+🔵 Method: POST
+🔵 Body: {
+  "credential_configuration_id" : "wallet-test-sdjwt",
+  "proofs" : "REDACTED"
+}
+🔵 Headers: Authorization: REDACTED, Content-Type: application/json
+⛔️ Status: 400
+🟡 Response Headers: Pragma: no-cache, X-Content-Type-Options: nosniff, Connection: keep-alive, Transfer-Encoding: Identity, Expires: 0, Content-Encoding: gzip, Vary: origin,access-control-request-method,access-control-request-headers,accept-encoding, X-Frame-Options: SAMEORIGIN, Strict-Transport-Security: max-age=31536000 ; includeSubDomains, Server: nginx/1.27.3, Cache-Control: no-cache, no-store, max-age=0, must-revalidate, Content-Type: application/json;charset=UTF-8, X-XSS-Protection: 0, Date: Mon, 07 Sep 2026 12:56:16 GMT
+🟡 Response Body: {
+  "cause" : "ExtractDpopProofFromHeader: Couldn't find DPoP Proof header",
+  "error" : "net.openid.conformance.condition.ConditionError: ExtractDpopProofFromHeader: Couldn't find DPoP Proof header",
+  "error_description" : null,
+  "testId" : "BPQiwsUCMiWyYrI"
+}
+==================== Network Request End ====================
+
+2026-09-07T14:56:16+0200 info WalletApp : [DEBUG] [RouterHost:175 onNavigationFollowUp(with:)] [NAV] credentialOfferConsentView

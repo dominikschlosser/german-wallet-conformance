@@ -1,6 +1,6 @@
 # iOS results
 
-See the [README](../README.md#ios-results) for totals and coverage. This page explains the iOS wallet behavior behind the results.
+See the [README](../README.md#ios-results) for totals and coverage, and [test logs](ios-test-logs.md) for each failed test's wallet and suite output. This page explains the iOS wallet behavior behind the results.
 
 ## Credential issuance
 

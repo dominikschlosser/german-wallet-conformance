@@ -1,0 +1,129 @@
+2026-09-07T14:37:02+0200 info WalletApp : [DEBUG] [PushNotificationController:46 requestAuthorizationAndRegister()] [Push] Notification permission granted: true
+2026-09-07T14:37:02+0200 error WalletApp : [ERROR] [SecureEnclaveController:214 retrieveStringFromKeychain(keyTag:)] Failed to retrieve value from Keychain: -25300
+2026-09-07T14:37:02+0200 info WalletStorage : Load documents with status: issued
+2026-09-07T14:37:02+0200 info WalletStorage : Keychain queryValue: org.sprind.wallet.dev.eudi.document.storage:pdoc:issued id: for save:false
+2026-09-07T14:37:02+0200 info WalletStorage : Keychain queryValue: Software:skei:issued id:71EEEF13-E1BE-4D1E-BF8F-21582C61AB02 for save:false
+2026-09-07T14:37:02+0200 info WalletStorage : Load documents with status: deferred
+2026-09-07T14:37:02+0200 info WalletStorage : Keychain queryValue: org.sprind.wallet.dev.eudi.document.storage:pdoc:deferred id: for save:false
+2026-09-07T14:37:02+0200 info WalletStorage : Load documents with status: pending
+2026-09-07T14:37:02+0200 info WalletStorage : Keychain queryValue: org.sprind.wallet.dev.eudi.document.storage:pdoc:pending id: for save:false
+2026-09-07T14:37:03+0200 info WalletApp : [DEBUG] [NetworkManager:265 log(request:responseData:responseHeader:)] 
+
+==================== Network Request Begin ====================
+🔵 Request: https://localhost:8096/features?apiKey=REDACTED
+🔵 Method: GET
+🔵 Body: 
+🔵 Headers: 
+⛔️ Status: 404
+🟡 Response Headers: Expires: 0, Date: Mon, 07 Sep 2026 12:37:03 GMT, x-frame-options: DENY, x-content-type-options: nosniff, Content-Type: application/json, x-xss-protection: 0, x-trace-id: 492de48edb4af8bb9bea3a3de07a3176, Content-Length: 119, referrer-policy: no-referrer, Cache-Control: no-cache, no-store, max-age=0, must-revalidate, Pragma: no-cache, x-service-version: 2ac3984
+🟡 Response Body: {
+  "error" : "Not Found",
+  "path" : "\/features",
+  "requestId" : "581dc14b-609",
+  "status" : 404,
+  "timestamp" : "2026-09-07T12:37:03.153Z"
+}
+==================== Network Request End ====================
+
+2026-09-07T14:37:03+0200 info WalletApp : [DEBUG] [NetworkManager:265 log(request:responseData:responseHeader:)] 
+
+==================== Network Request Begin ====================
+🔵 Request: https://localhost:8096/features?apiKey=REDACTED
+🔵 Method: GET
+🔵 Body: 
+🔵 Headers: 
+⛔️ Status: 404
+🟡 Response Headers: Content-Type: application/json, referrer-policy: no-referrer, Date: Mon, 07 Sep 2026 12:37:03 GMT, x-trace-id: 5f189e777a8715733b4d4ae834869ae5, Pragma: no-cache, Content-Length: 119, Expires: 0, x-xss-protection: 0, x-content-type-options: nosniff, x-frame-options: DENY, Cache-Control: no-cache, no-store, max-age=0, must-revalidate, x-service-version: 2ac3984
+🟡 Response Body: {
+  "error" : "Not Found",
+  "path" : "\/features",
+  "requestId" : "c1ba6009-608",
+  "status" : 404,
+  "timestamp" : "2026-09-07T12:37:03.153Z"
+}
+==================== Network Request End ====================
+
+2026-09-07T14:37:03+0200 error WalletApp : [ERROR] [UpdateService:33 refreshFlagsIfNeeded()] Feature flag refresh failed: FlagError [logic_feature_flags.FlagError#2]
+2026-09-07T14:37:03+0200 error WalletApp : [ERROR] [UpdateService:33 refreshFlagsIfNeeded()] Feature flag refresh failed: FlagError [logic_feature_flags.FlagError#2]
+2026-09-07T14:37:04+0200 info WalletApp : [DEBUG] [RouterHost:175 onNavigationFollowUp(with:)] [NAV] Dashboard
+2026-09-07T14:37:04+0200 error WalletApp : [ERROR] [SecureEnclaveController:214 retrieveStringFromKeychain(keyTag:)] Failed to retrieve value from Keychain: -25300
+2026-09-07T14:37:04+0200 info WalletApp : [DEBUG] [PNSAccountInteractor:86 sync(with:)] [PNS] no mpp_registration_token yet, skipping account sync
+2026-09-07T14:37:14+0200 info WalletStorage : Load documents with status: issued
+2026-09-07T14:37:14+0200 info WalletStorage : Keychain queryValue: org.sprind.wallet.dev.eudi.document.storage:pdoc:issued id: for save:false
+2026-09-07T14:37:14+0200 info WalletStorage : Keychain queryValue: Software:skei:issued id:71EEEF13-E1BE-4D1E-BF8F-21582C61AB02 for save:false
+2026-09-07T14:37:14+0200 info WalletStorage : Keychain queryValue: Software:skei:issued id:71EEEF13-E1BE-4D1E-BF8F-21582C61AB02 for save:false
+2026-09-07T14:37:14+0200 info WalletStorage : Keychain queryValue: Software:skei:issued id:71EEEF13-E1BE-4D1E-BF8F-21582C61AB02 for save:false
+2026-09-07T14:37:14+0200 info MdocDataModel18013 : Loading cose key private with id: 71EEEF13-E1BE-4D1E-BF8F-21582C61AB02
+2026-09-07T14:37:14+0200 info WalletApp : [DEBUG] [PrefsController:63 remove(forKey:)] [STORAGE] clear key=cachedDeepLink dest=userDefaults
+2026-09-07T14:37:14+0200 info WalletApp : [DEBUG] [RouterHost:175 onNavigationFollowUp(with:)] [NAV] PresentationRPInfo
+2026-09-07T14:37:14+0200 info WalletApp : [DEBUG] [PinnedCertificateNetworking:52 data(for:)] 
+
+==================== Network Request Begin ====================
+🔵 Request: https://localhost:8443/test/a/german-wallet-vp-haip-mdoc-direct-post-jwt-1788784374/requesturi/Uzn1WwtUFGDZa4TPoKwvufSbZNKuvnI4yg4m6nsJQbkMUPuRovetdl7uGDCr8bLo
+🔵 Method: GET
+🔵 Body: 
+🔵 Headers: 
+✅ Status: 200
+🟡 Response Headers: Strict-Transport-Security: max-age=31536000 ; includeSubDomains, X-XSS-Protection: 0, Content-Type: application/oauth-authz-req+jwt, Vary: Origin, Access-Control-Request-Method, Access-Control-Request-Headers, Date: Mon, 07 Sep 2026 12:37:14 GMT, Expires: 0, Cache-Control: no-cache, no-store, max-age=0, must-revalidate, X-Content-Type-Options: nosniff, X-Frame-Options: SAMEORIGIN, Pragma: no-cache, Content-Length: 5066, Connection: keep-alive, Server: nginx/1.27.3, Set-Cookie: REDACTED
+🟡 Response Body: [body not logged, 5066 bytes]
+==================== Network Request End ====================
+
+2026-09-07T14:37:14+0200 info MdocSecurity18013 : Issuer CN=OIDF Test CA,C=GB
+2026-09-07T14:37:14+0200 notice MdocSecurity18013 : Authority key identifier [123, 164, 170, 75, 46, 49, 172, 19, 220, 31, 41, 91, 254, 10, 74, 171, 207, 51, 247, 229]
+2026-09-07T14:37:14+0200 notice MdocSecurity18013 : Subject key Identifier [237, 134, 56, 2, 107, 12, 91, 127, 238, 62, 140, 6, 80, 227, 151, 49, 152, 41, 168, 63]
+2026-09-07T14:37:14+0200 info MdocSecurity18013 : Subject Key Identifier equal to public key SHA1
+2026-09-07T14:37:14+0200 info MdocSecurity18013 : Subject public key is used for verifying Digital Signature
+2026-09-07T14:37:14+0200 info MdocSecurity18013 : Signature algorithm is SignatureAlgorithm.ecdsaWithSHA256
+2026-09-07T14:37:14+0200 info MdocSecurity18013 : Critical extensions correct
+2026-09-07T14:37:14+0200 info OpenId4VpService : Found jwks public key with curve P-256
+2026-09-07T14:37:14+0200 info OpenId4VpService : Session Transcript: 83f6f682714f70656e494434565048616e646f76657258206facd5d6c5796aa48794469f215db6eabea3ada8d67bf870c64ae52e0aa3aaa8, for clientId: VerifierId(scheme: OpenID4VP.ClientIdPrefix.x509Hash, originalClientId: "9aPJLG5arB2xlPGKl0AwBJ9I0BSmfSX_ygeD5rqh9pw"), responseUri: https://localhost:8443/test/a/german-wallet-vp-haip-mdoc-direct-post-jwt-1788784374/responseuri, nonce: wU6damAR55ntwNfpJ80oPH-._~, mdocGeneratedNonce: VTyQzXrQfWM8X2vj3-EaPw
+2026-09-07T14:37:14+0200 info OpenId4VpService : Verifier requested items: ["71EEEF13-E1BE-4D1E-BF8F-21582C61AB02": [:]]
+2026-09-07T14:37:14+0200 info WalletApp : [DEBUG] [RPInfoViewModel:47 doWork()] Relying Party is trusted
+2026-09-07T14:37:16+0200 info WalletApp : [DEBUG] [RouterHost:175 onNavigationFollowUp(with:)] [NAV] PresentationConsent
+2026-09-07T14:37:16+0200 info WalletApp : [DEBUG] [PinnedCertificateNetworking:52 data(for:)] 
+
+==================== Network Request Begin ====================
+🔵 Request: https://localhost:8443/test/a/german-wallet-vp-haip-mdoc-direct-post-jwt-1788784374/requesturi/Uzn1WwtUFGDZa4TPoKwvufSbZNKuvnI4yg4m6nsJQbkMUPuRovetdl7uGDCr8bLo
+🔵 Method: GET
+🔵 Body: 
+🔵 Headers: 
+✅ Status: 200
+🟡 Response Headers: X-Frame-Options: SAMEORIGIN, Server: nginx/1.27.3, Strict-Transport-Security: max-age=31536000 ; includeSubDomains, Expires: 0, Content-Type: application/oauth-authz-req+jwt, X-XSS-Protection: 0, X-Content-Type-Options: nosniff, Pragma: no-cache, Content-Length: 5066, Connection: keep-alive, Vary: Origin, Access-Control-Request-Method, Access-Control-Request-Headers, Date: Mon, 07 Sep 2026 12:37:16 GMT, Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+🟡 Response Body: [body not logged, 5066 bytes]
+==================== Network Request End ====================
+
+2026-09-07T14:37:16+0200 info MdocSecurity18013 : Issuer CN=OIDF Test CA,C=GB
+2026-09-07T14:37:16+0200 notice MdocSecurity18013 : Authority key identifier [123, 164, 170, 75, 46, 49, 172, 19, 220, 31, 41, 91, 254, 10, 74, 171, 207, 51, 247, 229]
+2026-09-07T14:37:16+0200 notice MdocSecurity18013 : Subject key Identifier [237, 134, 56, 2, 107, 12, 91, 127, 238, 62, 140, 6, 80, 227, 151, 49, 152, 41, 168, 63]
+2026-09-07T14:37:16+0200 info MdocSecurity18013 : Subject Key Identifier equal to public key SHA1
+2026-09-07T14:37:16+0200 info MdocSecurity18013 : Subject public key is used for verifying Digital Signature
+2026-09-07T14:37:16+0200 info MdocSecurity18013 : Signature algorithm is SignatureAlgorithm.ecdsaWithSHA256
+2026-09-07T14:37:16+0200 info MdocSecurity18013 : Critical extensions correct
+2026-09-07T14:37:16+0200 info OpenId4VpService : Found jwks public key with curve P-256
+2026-09-07T14:37:16+0200 info OpenId4VpService : Session Transcript: 83f6f682714f70656e494434565048616e646f76657258206facd5d6c5796aa48794469f215db6eabea3ada8d67bf870c64ae52e0aa3aaa8, for clientId: VerifierId(scheme: OpenID4VP.ClientIdPrefix.x509Hash, originalClientId: "9aPJLG5arB2xlPGKl0AwBJ9I0BSmfSX_ygeD5rqh9pw"), responseUri: https://localhost:8443/test/a/german-wallet-vp-haip-mdoc-direct-post-jwt-1788784374/responseuri, nonce: wU6damAR55ntwNfpJ80oPH-._~, mdocGeneratedNonce: lPu1rs6WHJats5sZmvKC8Q
+2026-09-07T14:37:16+0200 info OpenId4VpService : Verifier requested items: ["71EEEF13-E1BE-4D1E-BF8F-21582C61AB02": [:]]
+2026-09-07T14:37:18+0200 info WalletApp : [DEBUG] [RouterHost:175 onNavigationFollowUp(with:)] [NAV] PresentationLoader
+2026-09-07T14:37:18+0200 info OpenId4VpService : Openid4vp request items: ["71EEEF13-E1BE-4D1E-BF8F-21582C61AB02": ["org.iso.18013.5.1": ["birth_date", "document_number", "driving_privileges", "expiry_date", "family_name", "given_name", "issue_date", "issuing_authority", "issuing_country", "portrait", "un_distinguishing_sign"]]]
+2026-09-07T14:37:18+0200 info MdocDataModel18013 : Unlocking key with id: 71EEEF13-E1BE-4D1E-BF8F-21582C61AB02
+2026-09-07T14:37:18+0200 info WalletStorage : Keychain queryValue: Software:skey:issued id:71EEEF13-E1BE-4D1E-BF8F-21582C61AB02_0 for save:false
+2026-09-07T14:37:18+0200 info MdocSecurity18013 : Creating signature with ES256 for id: 71EEEF13-E1BE-4D1E-BF8F-21582C61AB02, key index 0
+2026-09-07T14:37:18+0200 info WalletApp : [DEBUG] [PinnedCertificateNetworking:52 data(for:)] 
+
+==================== Network Request Begin ====================
+🔵 Request: https://localhost:8443/test/a/german-wallet-vp-haip-mdoc-direct-post-jwt-1788784374/responseuri
+🔵 Method: POST
+🔵 Body: response=eyJhbGciOiJFQ0RILUVTIiwiYXB1IjoiYkZCMU1YSnpObGRJU21GMGN6VnpXbTEyUzBNNFVRIiwiYXB2IjoiZDFVMlpHRnRRVkkxTlc1MGQwNW1jRW80TUc5UVNDMHVYMzQiLCJlbmMiOiJBMTI4R0NNIiwiZXBrIjp7ImNydiI6IlAtMjU2Iiwia2lkIjoiRjFEMUFCMUItOTI3MC00QkExLUE1OTYtQTMxRTlFRTEwOTY3Iiwia3R5IjoiRUMiLCJ4IjoiQ005Y3pJNnBpS2FEdEhpbTVMazNIRXM1TXJacWdFeFplVFl3VVpsc1Z0cyIsInkiOiJDTFBVZ01lVVNuY21GTlhVdmNzVU9vTUVhX2VCalR2eFhMc1lMQTZhQUp3In0sImtpZCI6ImMyNDFhMGFhLTIzMTMtNGM0My04MWE4LWIzNjY1OWI1MjAzOCJ9..lAbt8Dtr3i3IdRuQ.Zhp4ruZrZnKpwZPjTDOQvEUutaVKBdj9B25MnONx9tzFA6IzlceI__KrMMetGB3Dw9enhUsSpGjGNe68knNeB7jbuh7PtGmFKxsi930OHjpoxmhjjepx8H_maZ_jwkf9ejfFrHsb60PDgJrtRuk5zu7skXEUGZ2SwUnFoyZ3WD8b_qUC9gwfeFZdFb3kP-g635TIevzKS2xntTSOlqcvi8XXNNj8hkq7sHyD7lwtgjbvWnL5tI-8ILDConcX01mpyFhk9em03WwvYfy5dIg1clD79VpL5Jvb6C4p1xyXIr0YRWGjgpV5Qy_QqTV42y569iwQKt4s8yvWUYIaajny9vMd80nGkzh9ptXBoabO-JbuuHhwoYFkmudmf5-IdOmfZX73qt3wVSGf4L5jKak1F64-LyV0oYVN2wab203qQ5avr5SlfwY4c_WudZVmCCv4jHs6KQ6IcfxuEuFqM41v41MPb1GI5yxEm15RDczoreTMZDE0lXNUxJEsgZfCb4GLpiNhbBR2H94zG4a72NPsgwzThRMrKdB0gd69UOgpwJHGbbdMnnlNXqA4fo5WjO6Y68HJeufXN9FpDxi6HD1iij3HtGVPR2ItlRxQNGSaLK1p_g9cjOQBwXDGLUS9SfzRYNBjWGVlDm3H4M1KJ65UO-RYdsjMQG2FYlx_77LP75NBc-gtFmsYB7igcADf9fjs2hqhLIyw6WXz6D6zgDy5wQDv99umhXe4kTwblwguHiUzEDKgdOD80Y7a49IcpahPNKZa4m2ev-Z-pStTLOHPLw-ZKt9j56oUYc6DXN8PKetVwOiVxYZCmwgNsr0t8y2iC2xd5Wstg7G-BOxIXM_lsihWzXlYFEQODgYcwmaLM3RuOJNRAA3q5BfiYXfCXK1Jxu8-JXwVUbXgKlrI6SnkXcPZMJLXvKDpKe34mCISVzFT-dWQbTyrt_YCCEvBATIguDJq5vIgPX8cUTraVkCxeivSr7jDAwwDR1Wgic3-DVZvLZ9DTowXCqaHF0n2xhalTgC0cozFW4PTzBQtOU0UcfFG6n7EtVs9JisR0-5m4D_Lp2URMuddt44dqCeV-mbQIChUCOU9aOBNjW4Mq1l9fx7qQ2-sz48Qf0k1R1j35q9k0AGirKknTJPInUQ9ToFeFiNfPnQON5n_jksuFP6mjnVE0MpqT2zyN2w5s_6siRugxOwTfdDjMBragUrtytYv7sbofSs4XpBV8KtHo4ceGa95rbl3OpYff-LlAVf5CKFEmQywGMhGA5ccR-caEpgOMlZnKyI9On6JXR8XL_Vo42ezkMqs1oFLlodv8y0WQ-NHR3_9A9fc5XU1NYtm_9p-hZJ88Iq6pd3rCRcQ95p4N5BbEV222Uo8pAMlR8wUIjKm0t_AMfF6H1wY_G6SmKoHGIhsM9rMN29AgZqyQWj61q94aMt--E9RH-z67zqo3qPusEZZr3N47kt6egd1cbMdtVnAMjE4S_CNXTeDQJRFbx6ArA8i7hWzp8u0_iQAbppWHaoTheockUzmzziJBKLSG7QC2-bbMz6Hix5oCYKHup05t3Pz_LsfV6LGoQT0ho7_KArY1gRuLpuig6EpbcT0w9oQtsmhQ3adduS-XuNl1HrKtF1s_gbjGMPfKxiVGxFnSh3Hjvyd0OVS7mBBJxNEpKQf2WzMR2CDWOvKATfkQSRI_SqgOLSiLpNFhDQiKxz7ryjdoniJp9KTlupy1NGJM3kDdoiskDkgjgvfzN1tXPZGUiiAMULmVCZ-n7tiSR6Z1dZOKMcDlsrpOHiTrEIoufMoZ0bF9cS9h44Q6ZxA_siABy4X3pq7CfEe4p2FuH3gssgW-_c0c3Qck2aU05ZvYhbWvsPb0Z_eqbKQ8AF11UARietufpQWKuCTjUtajzSTMpM7-sKDLN4C8cVzZNJG5w7TD_hrxOUHC08TTq9LS-PL8SgEQgTG67K2S53m1cceUhhdQasR_BWoDWaoDDOHP_AZa-ZnkJ6An1dw0pmjUz644dCjEBlgiISyLfJft0cpzf94l1NOQ1zw6A7IhJ5qdUWmnmwAgeMWfOOQlYaLlBCBvIU065BdOMhc3TYMxwcsXjWh2aEoY1XSzhtCw3Pbooz_NPkK6ssij6kQe8CA8POMzIp8_gjWi_kdQ1w9xBPFgWK_1ByGt-oBX3w84jQtr5ak7xei_sSNBZZ7ZkuFQ1mvdv136T926bo8lv2fpZ-piSiFeaSDrv0gcQlBXDTAwo3pgFgelfDhQ8jkmGzV_0dE6zi7K-tIWMkDELOJhcxYiWVErDbqbmkRP2ucr-cDmObjt0fMBDM7GAUlEhQuUTGSa6I-zWoNN1n42kEjm7svrj60R87pv4ntuYXMaDfvpFSfKSoAFFh0y2HP_24X4JkrZKh5wHk5tfj0TZV3KwjNQD0Miipp3qE3QsdfA4NDgepIbhBNjv15cMFalHKz3mpOnZsO9a6pCk17g0jqFILluGnEJrC-wybFJg-x7nebyV0gMYfNzQOYQe6iac2uSZfZ0man10K5TA2fGzx23KFtMhEhWgMgvOkXqpgf7KEIKKUe5XRnsNqCnEju2YK0yBlUtv52hjaNui_DeYGoauHXwPsWnes9GH6wmdK-HA551VOfRWzY1DeipquwlnJqdG19386HcFHn9cIrRx7tkugg1hkpg6JrKx4msso1ZWzhwpxqzRf6sMMPhkoKuYvFD4npLI5KwsAmU-77LlGHGIzFeeGYIm7Gh8yg30ckTDduK_mg2_xjsouR1tKLHB2DIvpcjy-N0GtPgyHYPpmmMKTTIjrwzxtLQFTXel-nhYPc5Y_8HAppEZALCwQcGlqg_ahiKUmeZBD9QSB-84GCRgnf7JsA1wcIlJ5CKKtn5zN90RrMfy5RLn9WhKPea5nBwN1YA32n_nhR4R1-vlKjdeZUPk2R0n-npzbEWk6c7i1aar5IbdqopSdeYecsEf1rTtLy9NOCRWed3uavIcXcals3iIt8Ezgkkw_Doo8aaxnjox2nsqNEp2NqctFp_F6pDCzPBRfoAi-nUby_j-Tn-Z82uKs9AEmJzX-eBNMvyO7mNY5_UQ0OMvXzk7oJl-LCA-GOd6UXuqg4lLgF-dCZUwW_Mdzk25RCQC38zDnWdORpXemD9jr1V6hNPzQG2uqw03sVqP-16egEQ8BmhVUYCQbRLaUYs-NOVVdW3qpkuIJPWS3mnce4GrEdm2d_u3nlqXYx0xOzPc9SSqs527cw7wCUwGfXGR-CCh2sWlmbDkSBIS9Pzn87W7qVWIYp0udqp7Z2X8LO0RaJUKqycBYtjMrHvHPiiEcWND_jlPohQhKuVT-Kpf1KXSUAjQ5lxAangk7wj9BvTtniZdKnCL3dvDIUkErBghnVazYH2r19EPNc5X55hIxMk01f2igAAUj0WQ_gWJwzBNpMc1FpVJvVK1zDAqriSh2EctwXezPS_WqlBmfck27QJVU9T81bGGEUxa7sL79fveXcHNK43slMp50WUiIno3FHokFohbFPUgH_3ln1fYyrhD0NgiQgyPUIrPcLYSd9Yn373uSouJQT1-bqeCev2zqkQ5sYJXxN4RImJNEfFcCgWu8U7YltbDo8ipY2sFRKjA2JCBbBa-lisU0ZZblQZ-2VCoc5Azj6YgtuXF2ZPdg8iVSCozX8lR3a3a6MYw5LGZaQURkBzIR9oGVZu4Po4VrnZUx-AYLLSrrZH5oF74n8GnC6gdEzrEJ_ye9ja2oUnHfr2lQl-4NuARl7-FxnUtahrpgq4lCLoVZ9JiP7cj4Dm_H2mVl6G_Lry0kJq0vsKJzerwYul9PKsKqIGFB0VhkjKF0MHZ9YCDgcgW3Mwsq_oZ3i_lwRy_CPJkllWsOdy5EA4oWvHQ5p-3H3nh81tmzhfv97iQMhn23XezHWnmUbT1bO4f_MPG_bqtI6pd0Tmt4aYa5fZe-URPRq-xjlyAM9G4uUdsq2O3wHEAJXzlMZu6jjuvof_jqQNnS8LuF3VwR_MrfdloHRmn8hgAmJM7y4Owo4oN3-5v7bPiTDGTc7pwpaKko6zEDfNQK1BnIxDdPeSOEc9uCXoQeEua_TsaNNS2f_99flS8KqWgvaFWKMAJGSaFsuqEfeEqpwFQmQpd3nAsVOzzT4C0AvcxUDmrLkgpVnK3z2cH9Y72xR4VVV12EWH5PpfEWqAoN6UDDLZkyBmB4gO5xnBK1UpMUaBF5jMd8VqOY1-UoBAU0oDrfbyngKQEt3m5mCwkOpx4REy7qD3L-JSY53g4ebTfDYZyamttw95D93RX156Kl1Gnhvga7FJ5OdxcxxAlsQpXSlGa_zyu-40XiOyKK9CFx_qhHZIrP6P3W9mCUiZqfxJa1lCklGCAQNIrUpealHwSpMB--pcyBCQew9RGFwZ-TKwUeEI2N_ps-jdLVWt5fOS0zRKKzIVOu_fWbbygdQxrc7rulmONixUjotvGD_ADmUf43tTmGAOLZHtEZf3TxjB6m4dNYPGusOR4hPkOT2BCzUDAF4G4D9nlUtpB1IGGDvh15JrqFzE91KUDqGnUAxSN3l38kV3yV1Gh_CzZgv-H5g3hKIF5pYQ_cS_lFwhuh4kksxMmHXnBKTFEOgZtSvjnKxIKHr4_TSX1UunkMAJkAiijjjg7BcibxVXj91mTZVKxnEI9L4coOTedryElGNaBQV3FSH_tpxIVbPnDnGBOhXsdH94mQ8n0c1qFYM6XiKtamziNDOpSmdPsBS0wSnUcre-11iOhME65P_KmqdFJ5WmzajDpwq8JQVj3rqcGUSD_cvRv2b2fFAe7zaW-RozB6cXyMqX4iOfDQE1h2lG1P1Ti5M1bTYV2_ktAVZxMsgjIwQkV79CgBPjryTxHMKWYK0bRSjau0g9y7UBhw3xxorU3a5oHmSorF3NolS7dchURMA5F4R-9yhU2r5P3M5j6bkeAL_fOoAHwkLdd61BL52BmOq9OaR-dotRFShZI2o2-O3ZpyZU2Zzdk7uoueLD5ptDKH09hBc5dtOD2hYz6A_rX5jpKH1Ur0zlmj__dgTrq_GI5yolDDlBLgYxkUfx-0mYcFNubot0uoxUC0wZPqhaZjhT7tZLOhkxOel8hIff_R_144pW7X8-E_wcVxs5z4V1_FJDE27LoSgdO8YOWzrPxS0FxvAOyMvY4TiWjH9G0Wxn9ht1qF56sWYSWXh6-mzCg5YZ0NNxc_JJG7ESMDlyTNd0e4kcwjvET6GuJKo4TWAZdXuJZ7wyY9MbgvGN3KKMM3I--7TNZRkigdxv1W466AqMF-9Zo7kKcoxNA1eSHh6We2dcZ2Yvbcl84Y0iF55e0BU-T4w4X5rTYM5eZqvV7s6mvyeyACUnpA41lTHmSy3fTnBxUhKKR7Gms2X5Ja5D5Sq8uMHyJVkl4K9JCm1E54xiCAYwsrfnw6OLg89LouT-RO8tqZGvOvIduNQcrkavVJh0Z1OeHyMWsPe_d5rTMAJUItRwNaBOCRIfIB_Cv0Xm11ljBHOAYRzH6daJiVuX_zNbJfSh0h19w3ReEjAG9aMVLbdQCiWn-PI8M0uVdlsohtstylb243CCdpZ9-ES38D2JdYvr4XcQCnU3OJchgG5Dwa8HJYDLgvIkd1pme14HV9GRzw8yJqdaW4KwgMfqguEFgVLnNdHfIeHB-rsva41Hg62DCdYqaN37kZBsuC1fYbAe_1vq9o6MWWiKF8MKB4tW1Ul8N9NCLE4XkCrPHnw_fXHRZwxDekluN2hmdHA7DLWOZyEYMVV7LDsrOzwk2dwnfH2pjtx5M5zxwytiHT3I8qqGW_Sor6lANY4pPQzbQop14_F5R1UydiSdF2ynuVPuBgJMLRnqzymXxf6AVDDqvHgoGGt5tjc3i9wmJyyoquMRDUlGgk2ZZhTb8EqoCrEmtInCtCAuZXl71wEkPTpeQ0JEyhxUBmTLhLLtJO4KkzXSFWzQ_ISYup3hZx9It3sNKu4Fhqi0bP67MKjQhwKtFQJzyWFSEydeY3Nd4VVp68EpW7pCvdRjBClp9WqrIqP8Hx2zNDxxBR0FtbMOHT4YTnolVOrw0dQI6Sf3reSueWzysVv6Ui9TgEp1vaIoEy5SmZxoZhqR7fnSJpNp1WW4ECnQ6MyeiKnjPJa96AjXsd4fWQIvHaLkVSRkYqM3SPwqNuaZ4_sia9RZ8mg5H3kDfIsf4v7OYyEZqBZrS6lcsn9GqM-s60zqv8BRmfY3ctZIbgHImNmbSr19rzU3K20jOcgpAPJSqkiH7Xy6oRSzhRQ_BBZxgVZ9EdmmN0X8argTg3APP0UjMHKoj1EmIe59VceKmmO9YIscRaIjeTnwfe_MZTSCwEkcqdzCHs4a9uHDT2Pppj8yOIhsdwrARQ7anStKiqjSeRTb-g1hID5mtTSSvg5CW0Dxx7l9IrykaZ6RBdO_MvV35sEkheHzQEagMv-NUYMCyNRsg8GstWJoXYxlrjavq0spesaumZV5SCn3b9_w4JERfwyw65YGP8fIegCH4ek-ap1YydaZcsk_C7Qp72Sw3fA7TOJK7utcjL6kTluXk9jkkSc6hBuwnECzAqxWICRMj7TYhNujlWacHMaUbQBEQBKki9YNC9_4rYe85jzcrYvlgWfqhcuo47aOj-O_8o2QlRIH6I1rlHzfkHDGUNVNbXtTT7GYItmE-TLdQ33S21YbNWrlmC-xRYTpFtD5Fci_56v9LqvZ5-YL1huj9uNtYHlN-qmspcRgb_D6JTO9PSIFaUoWOuWWUo43LI7V-zzTZdQqhASg042LyWGz66YW3tfFU8i4o_ySpzPswT3_ebFRLy5Dp6nCrLEYTwjtAqjrlblZ7CrHliOtxKQqJyt4aSUA1t57PucfXY_Sd7har7xVtIrIBn-_LoL5AQpqMVO9De4KTvW8zfGkR6RbWuOFQzld4Nu_kJfxL4j9P7GNhpY0kFUV22xFj_-jIG1UTdjh9Ul1mnbqd59pYffazYSrT1tVVp33tiMF5sJe8L73wMD0rAZoLiC3o9SNar5PX3gqTy4609bG5yyzMH_YWxoBRmDbNoI3U5RKiT24mVSTh5F_1X1jq2hcWfOsdnpP9nBLlYXNFUAod8lIqzcNW84HZCFMJIwC1UZhYnIsaq-gQdhrWQQvzHBJn3IwN15hD6tKILCB4QhgPliEEXE8I63t1KfTVLkD6_EXyaE8mk66kLIoSCOWB6fhE0VnsneyjbOCaya08ka7iGuisIlvQ9N9l5qB80Otbl7kpYn4VT1Rxj9sOGUbLpep-MwDI_o3zsDX6Rv0L9qDb3ltd77g_FK7xaWOftI_9KN4etbE-t-mJ1_Z72LZ1plPm5zDmPIJ4AuSeH3fHJQYMCGwey9BQzBjhzqElVaEuPmUe8oTh-87cQFhAawiuuQDTOmAECaLk5Z8AWwIU44bJaFRKTxjDMPNFkS_pTmLHPXE3ywpSm_pKLHMCLWR7O43Z3WBEUib5-qEcT8uM8h-hBJUZgIoW1XfARjsD5030OMwd6O1IsOuiTU9KuJIjbs8W-mbNtlU5tDVE3jmx59llAiED-SKurs0LsGwV9acQyJaPtaZeLYwHG3Qy_DY8TwFeb9LklLKLp0_Jm23z0vasPPR0WH_heMjCQr0V7PlSOkWfZ4UuyvBb-U5O6N-ds5shT3_QyWCzAZDWlcWmn1gorsoxo5dUSKPqxgfk2BhwPTprr3je7vwiXVnoz7BsD90f8crP3qBVfQXfET2w9n4tJ0gmOAYbXBhEimPCVJ9ToJDisfTQebEqTgeFVYm1loNKifaiefHP9vJYQnpnZ2TCZ-WRkFoDMJcchrJXYtFSQkbr9iB6HHHrHfbCwCxvZSwh5cj-Avd6EVEHclMV9J1LRkJ_hiUruXIig3DLu3y-VHyBMmWuqivr2HH08oKl31troRu4Jt-jTzi-7G9A7uYZ2J7o1IwkEfSb6Vq5vsK3OTfGXopRVhqXC-HBHHqvBdawFouRcY2P8gnGoQRPAHdJObCbNikZ7nIzQG9es-en7G8q03aRJegpWvlbS5-SkDVZVznnE8bejet9X7s98M8Rp511jv2UUGjkcD28ftDAiwT8iBI64rCLAWD-KVMahBY0RA94G_5503keVeztVR1NM2K__tvNHZz-dw-3OL0gQx4WPkD436_2h3M-JQLYWtxeZ2JVScFwJ8ZXSqjYn1qNXm-5KtvvS_x5I3IlRtodrsltrgiImrvngLmJnN8hqBiIsUYRHC920SJmJiUEVpcFB1av7FKWtDIcfTHW6EGYmGj5CBgths-7aXn2ujAow_ASMiXCo5epd1s3Lity18O-nrvS2xG0mdDKnavdkWdOdNVmRGdSs8Au2TyIN8ysPup_h0Ntq_urvvAepTngYLuKxLEzUPjO69VLluA4PHyJFknqzWlvWV_hO60P1OqhhFlaEXJa3SbIRS2_YlzVXYzI6bJWlwXh42mS5koeIwx6_AvJIWKY2VRW7iTDWqDmITJSk_BCYkdF7Tibzl9LlntQwFsXu6LTyqs_3CjQtV2vzzeW1LuXR-HgFxkdEzvn9UtLi_v49Kfdpgvtdb7NC9u8pMAGPeCEnexxdczk9vFs_S-vvoiefte8XGGiZVfub3TwPMg-42FMvGimKiE4YOS05RwD7JvogzwRf3npy6JjHI7On5qxRAmT1u3IQwMCMgesXjtEui7WXrYzvPjuJ6oNKTrlx3ner4xx3lp2tm6aI-C-EQbXRCn9FWg2UXfeVSbLRxdNAB23ma2ave3GJeNvDaXBiR3l692j9fuRnGUTQ_gwx83ufYI7Am42lPQylGx-hw5XB763OiC3V3fzudwN1B5qgsJLYE6ynChx0tHH4KlvCy0Lm8Yg0PSlL2npZPU8kyXEII-j_E_7FsTLw6AQVvOSbHrF6YYO_T59Edkrj2o2tt53kDgYwcUer1vgVaEEvaqgoy12auJ_6-XVC-ZaNdQtHuA-Kt3Ik1diG0T0dudKp4zM786ycRwblijPJc5dESSXKQm49EicPxdsdyjRh_ffeYZTIR6zq0E5tSm4QknYMLBHW6Dj9uReDb70LQNd5F28v9yrkI0SUAkkNyS2MY_6bYXBG94Zwie7SMLN2da8XUeq7G0r5TjdQf_wgYEQHa0IOuR4JwqvjKRw.LYOiJeVoj74yb5qoJ7fZNQ
+🔵 Headers: Content-Type: application/x-www-form-urlencoded
+✅ Status: 200
+🟡 Response Headers: Cache-Control: no-cache, no-store, max-age=0, must-revalidate, X-XSS-Protection: 0, Server: nginx/1.27.3, Vary: Origin, Access-Control-Request-Method, Access-Control-Request-Headers, Connection: keep-alive, X-Content-Type-Options: nosniff, X-Frame-Options: SAMEORIGIN, Expires: 0, Strict-Transport-Security: max-age=31536000 ; includeSubDomains, Date: Mon, 07 Sep 2026 12:37:18 GMT, Content-Length: 240, Content-Type: application/json, Pragma: no-cache
+🟡 Response Body: {
+  "redirect_uri" : "https:\/\/localhost:8443\/test\/a\/german-wallet-vp-haip-mdoc-direct-post-jwt-1788784374\/callback#R8P6ExiSlN00lSB0J..QrNZFE3ft0sSU3QbLJU.9-L~Fx8KJ00K3~crOg4Jon-dB.Z1ZPhnyTNafDjpOR-~CtmGXNRhPPHPgxFq8W~KCS3bMcsGrxVj1Qi-TbxU1QFvG"
+}
+==================== Network Request End ====================
+
+2026-09-07T14:37:18+0200 info OpenId4VpService : Dispatch accepted, return url: https://localhost:8443/test/a/german-wallet-vp-haip-mdoc-direct-post-jwt-1788784374/callback#R8P6ExiSlN00lSB0J..QrNZFE3ft0sSU3QbLJU.9-L~Fx8KJ00K3~crOg4Jon-dB.Z1ZPhnyTNafDjpOR-~CtmGXNRhPPHPgxFq8W~KCS3bMcsGrxVj1Qi-TbxU1QFvG
+2026-09-07T14:37:18+0200 info WalletStorage : Keychain queryValue: Software:skei:issued id:71EEEF13-E1BE-4D1E-BF8F-21582C61AB02 for save:false
+2026-09-07T14:37:18+0200 info WalletStorage : Keychain queryValue: Software:skei:issued id:71EEEF13-E1BE-4D1E-BF8F-21582C61AB02 for save:true
+2026-09-07T14:37:18+0200 info WalletApp : [DEBUG] [PresentationInteractor:187 refreshLowCredentialsIfNeeded()] RefreshToken: post-presentation check; 0/1 document(s) at/below threshold 2
+2026-09-07T14:37:18+0200 info WalletApp : [DEBUG] [PresentationLoadingViewModel:194 doWork()] presentation is successful
+2026-09-07T14:37:19+0200 info WalletApp : [DEBUG] [RouterHost:175 onNavigationFollowUp(with:)] [NAV] PresentationSuccess

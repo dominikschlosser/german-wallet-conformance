@@ -33,7 +33,7 @@ Versions: suite **release-v5.2.4** with a local [SD-JWT configuration patch](doc
 
 Basic pre-authorized issuance and presentation pass for both formats. Every failed test contains at least one documented wallet finding. The same finding can affect several tests and variants.
 
-[iOS result details](docs/ios-results.md) explain each finding.
+[iOS result details](docs/ios-results.md) explain each finding. [Test logs](docs/ios-test-logs.md) are listed by plan, variant and failed test. Each test page links its wallet and suite logs.
 
 ### Suite overviews
 

@@ -1,0 +1,129 @@
+2026-09-07T14:38:08+0200 info WalletApp : [DEBUG] [PushNotificationController:46 requestAuthorizationAndRegister()] [Push] Notification permission granted: true
+2026-09-07T14:38:08+0200 error WalletApp : [ERROR] [SecureEnclaveController:214 retrieveStringFromKeychain(keyTag:)] Failed to retrieve value from Keychain: -25300
+2026-09-07T14:38:08+0200 info WalletStorage : Load documents with status: issued
+2026-09-07T14:38:08+0200 info WalletStorage : Keychain queryValue: org.sprind.wallet.dev.eudi.document.storage:pdoc:issued id: for save:false
+2026-09-07T14:38:08+0200 info WalletStorage : Keychain queryValue: Software:skei:issued id:71EEEF13-E1BE-4D1E-BF8F-21582C61AB02 for save:false
+2026-09-07T14:38:08+0200 info WalletStorage : Load documents with status: deferred
+2026-09-07T14:38:08+0200 info WalletStorage : Keychain queryValue: org.sprind.wallet.dev.eudi.document.storage:pdoc:deferred id: for save:false
+2026-09-07T14:38:08+0200 info WalletStorage : Load documents with status: pending
+2026-09-07T14:38:08+0200 info WalletStorage : Keychain queryValue: org.sprind.wallet.dev.eudi.document.storage:pdoc:pending id: for save:false
+2026-09-07T14:38:08+0200 info WalletApp : [DEBUG] [NetworkManager:265 log(request:responseData:responseHeader:)] 
+
+==================== Network Request Begin ====================
+🔵 Request: https://localhost:8096/features?apiKey=REDACTED
+🔵 Method: GET
+🔵 Body: 
+🔵 Headers: 
+⛔️ Status: 404
+🟡 Response Headers: Content-Length: 119, x-frame-options: DENY, x-trace-id: 20caba632d32363439215074dfbf0c22, Expires: 0, Cache-Control: no-cache, no-store, max-age=0, must-revalidate, Pragma: no-cache, Date: Mon, 07 Sep 2026 12:38:08 GMT, x-service-version: 2ac3984, x-xss-protection: 0, Content-Type: application/json, x-content-type-options: nosniff, referrer-policy: no-referrer
+🟡 Response Body: {
+  "error" : "Not Found",
+  "path" : "\/features",
+  "requestId" : "c1ba6009-731",
+  "status" : 404,
+  "timestamp" : "2026-09-07T12:38:08.769Z"
+}
+==================== Network Request End ====================
+
+2026-09-07T14:38:08+0200 error WalletApp : [ERROR] [UpdateService:33 refreshFlagsIfNeeded()] Feature flag refresh failed: FlagError [logic_feature_flags.FlagError#2]
+2026-09-07T14:38:08+0200 info WalletApp : [DEBUG] [NetworkManager:265 log(request:responseData:responseHeader:)] 
+
+==================== Network Request Begin ====================
+🔵 Request: https://localhost:8096/features?apiKey=REDACTED
+🔵 Method: GET
+🔵 Body: 
+🔵 Headers: 
+⛔️ Status: 404
+🟡 Response Headers: Content-Type: application/json, Cache-Control: no-cache, no-store, max-age=0, must-revalidate, x-service-version: 2ac3984, x-content-type-options: nosniff, Pragma: no-cache, Content-Length: 119, referrer-policy: no-referrer, x-xss-protection: 0, x-frame-options: DENY, Date: Mon, 07 Sep 2026 12:38:08 GMT, x-trace-id: b4b993d6a5908ade5ad22752d014cf2a, Expires: 0
+🟡 Response Body: {
+  "error" : "Not Found",
+  "path" : "\/features",
+  "requestId" : "581dc14b-732",
+  "status" : 404,
+  "timestamp" : "2026-09-07T12:38:08.769Z"
+}
+==================== Network Request End ====================
+
+2026-09-07T14:38:08+0200 error WalletApp : [ERROR] [UpdateService:33 refreshFlagsIfNeeded()] Feature flag refresh failed: FlagError [logic_feature_flags.FlagError#2]
+2026-09-07T14:38:09+0200 info WalletApp : [DEBUG] [RouterHost:175 onNavigationFollowUp(with:)] [NAV] Dashboard
+2026-09-07T14:38:10+0200 error WalletApp : [ERROR] [SecureEnclaveController:214 retrieveStringFromKeychain(keyTag:)] Failed to retrieve value from Keychain: -25300
+2026-09-07T14:38:10+0200 info WalletApp : [DEBUG] [PNSAccountInteractor:86 sync(with:)] [PNS] no mpp_registration_token yet, skipping account sync
+2026-09-07T14:38:20+0200 info WalletStorage : Load documents with status: issued
+2026-09-07T14:38:20+0200 info WalletStorage : Keychain queryValue: org.sprind.wallet.dev.eudi.document.storage:pdoc:issued id: for save:false
+2026-09-07T14:38:20+0200 info WalletStorage : Keychain queryValue: Software:skei:issued id:71EEEF13-E1BE-4D1E-BF8F-21582C61AB02 for save:false
+2026-09-07T14:38:20+0200 info WalletStorage : Keychain queryValue: Software:skei:issued id:71EEEF13-E1BE-4D1E-BF8F-21582C61AB02 for save:false
+2026-09-07T14:38:20+0200 info WalletStorage : Keychain queryValue: Software:skei:issued id:71EEEF13-E1BE-4D1E-BF8F-21582C61AB02 for save:false
+2026-09-07T14:38:20+0200 info MdocDataModel18013 : Loading cose key private with id: 71EEEF13-E1BE-4D1E-BF8F-21582C61AB02
+2026-09-07T14:38:20+0200 info WalletApp : [DEBUG] [PrefsController:63 remove(forKey:)] [STORAGE] clear key=cachedDeepLink dest=userDefaults
+2026-09-07T14:38:20+0200 info WalletApp : [DEBUG] [RouterHost:175 onNavigationFollowUp(with:)] [NAV] PresentationRPInfo
+2026-09-07T14:38:20+0200 info WalletApp : [DEBUG] [PinnedCertificateNetworking:52 data(for:)] 
+
+==================== Network Request Begin ====================
+🔵 Request: https://localhost:8443/test/a/german-wallet-vp-haip-mdoc-direct-post-jwt-1788784374/requesturi/9bWgXhLBwIpNrIv95qxS5RhcKNfvkiFVFN4YVWrWYpcbYWHp8zUIF3xokEPu9EBd
+🔵 Method: GET
+🔵 Body: 
+🔵 Headers: 
+✅ Status: 200
+🟡 Response Headers: Set-Cookie: REDACTED, X-Frame-Options: SAMEORIGIN, Date: Mon, 07 Sep 2026 12:38:20 GMT, Vary: Origin, Access-Control-Request-Method, Access-Control-Request-Headers, Content-Type: application/oauth-authz-req+jwt, Strict-Transport-Security: max-age=31536000 ; includeSubDomains, Cache-Control: no-cache, no-store, max-age=0, must-revalidate, Pragma: no-cache, Content-Length: 5350, X-Content-Type-Options: nosniff, Expires: 0, Server: nginx/1.27.3, Connection: keep-alive, X-XSS-Protection: 0
+🟡 Response Body: [body not logged, 5350 bytes]
+==================== Network Request End ====================
+
+2026-09-07T14:38:20+0200 info MdocSecurity18013 : Issuer CN=OIDF Test CA,C=GB
+2026-09-07T14:38:20+0200 notice MdocSecurity18013 : Authority key identifier [123, 164, 170, 75, 46, 49, 172, 19, 220, 31, 41, 91, 254, 10, 74, 171, 207, 51, 247, 229]
+2026-09-07T14:38:20+0200 notice MdocSecurity18013 : Subject key Identifier [237, 134, 56, 2, 107, 12, 91, 127, 238, 62, 140, 6, 80, 227, 151, 49, 152, 41, 168, 63]
+2026-09-07T14:38:20+0200 info MdocSecurity18013 : Subject Key Identifier equal to public key SHA1
+2026-09-07T14:38:20+0200 info MdocSecurity18013 : Subject public key is used for verifying Digital Signature
+2026-09-07T14:38:20+0200 info MdocSecurity18013 : Signature algorithm is SignatureAlgorithm.ecdsaWithSHA256
+2026-09-07T14:38:20+0200 info MdocSecurity18013 : Critical extensions correct
+2026-09-07T14:38:20+0200 info OpenId4VpService : Found jwks public key with curve P-256
+2026-09-07T14:38:20+0200 info OpenId4VpService : Session Transcript: 83f6f682714f70656e494434565048616e646f7665725820144c50299f2d39f9bb1cef882bf9721166f16797f2ef975a5fca0ce0f97fe4f2, for clientId: VerifierId(scheme: OpenID4VP.ClientIdPrefix.x509Hash, originalClientId: "9aPJLG5arB2xlPGKl0AwBJ9I0BSmfSX_ygeD5rqh9pw"), responseUri: https://localhost:8443/test/a/german-wallet-vp-haip-mdoc-direct-post-jwt-1788784374/responseuri, nonce: hwCrqiKdWIClQhKjidsXLJ-._~, mdocGeneratedNonce: EblGru7sazOw9gPUBnQQ8Q
+2026-09-07T14:38:20+0200 info OpenId4VpService : Verifier requested items: ["71EEEF13-E1BE-4D1E-BF8F-21582C61AB02": ["org.iso.18013.5.1": ["given_name", "family_name"]]]
+2026-09-07T14:38:20+0200 info WalletApp : [DEBUG] [RPInfoViewModel:47 doWork()] Relying Party is trusted
+2026-09-07T14:38:22+0200 info WalletApp : [DEBUG] [RouterHost:175 onNavigationFollowUp(with:)] [NAV] PresentationConsent
+2026-09-07T14:38:22+0200 info WalletApp : [DEBUG] [PinnedCertificateNetworking:52 data(for:)] 
+
+==================== Network Request Begin ====================
+🔵 Request: https://localhost:8443/test/a/german-wallet-vp-haip-mdoc-direct-post-jwt-1788784374/requesturi/9bWgXhLBwIpNrIv95qxS5RhcKNfvkiFVFN4YVWrWYpcbYWHp8zUIF3xokEPu9EBd
+🔵 Method: GET
+🔵 Body: 
+🔵 Headers: 
+✅ Status: 200
+🟡 Response Headers: Connection: keep-alive, Content-Length: 5350, Content-Type: application/oauth-authz-req+jwt, X-Content-Type-Options: nosniff, X-XSS-Protection: 0, X-Frame-Options: SAMEORIGIN, Pragma: no-cache, Vary: Origin, Access-Control-Request-Method, Access-Control-Request-Headers, Date: Mon, 07 Sep 2026 12:38:22 GMT, Cache-Control: no-cache, no-store, max-age=0, must-revalidate, Server: nginx/1.27.3, Expires: 0, Strict-Transport-Security: max-age=31536000 ; includeSubDomains
+🟡 Response Body: [body not logged, 5350 bytes]
+==================== Network Request End ====================
+
+2026-09-07T14:38:22+0200 info MdocSecurity18013 : Issuer CN=OIDF Test CA,C=GB
+2026-09-07T14:38:22+0200 notice MdocSecurity18013 : Authority key identifier [123, 164, 170, 75, 46, 49, 172, 19, 220, 31, 41, 91, 254, 10, 74, 171, 207, 51, 247, 229]
+2026-09-07T14:38:22+0200 notice MdocSecurity18013 : Subject key Identifier [237, 134, 56, 2, 107, 12, 91, 127, 238, 62, 140, 6, 80, 227, 151, 49, 152, 41, 168, 63]
+2026-09-07T14:38:22+0200 info MdocSecurity18013 : Subject Key Identifier equal to public key SHA1
+2026-09-07T14:38:22+0200 info MdocSecurity18013 : Subject public key is used for verifying Digital Signature
+2026-09-07T14:38:22+0200 info MdocSecurity18013 : Signature algorithm is SignatureAlgorithm.ecdsaWithSHA256
+2026-09-07T14:38:22+0200 info MdocSecurity18013 : Critical extensions correct
+2026-09-07T14:38:22+0200 info OpenId4VpService : Found jwks public key with curve P-256
+2026-09-07T14:38:22+0200 info OpenId4VpService : Session Transcript: 83f6f682714f70656e494434565048616e646f7665725820144c50299f2d39f9bb1cef882bf9721166f16797f2ef975a5fca0ce0f97fe4f2, for clientId: VerifierId(scheme: OpenID4VP.ClientIdPrefix.x509Hash, originalClientId: "9aPJLG5arB2xlPGKl0AwBJ9I0BSmfSX_ygeD5rqh9pw"), responseUri: https://localhost:8443/test/a/german-wallet-vp-haip-mdoc-direct-post-jwt-1788784374/responseuri, nonce: hwCrqiKdWIClQhKjidsXLJ-._~, mdocGeneratedNonce: SHzbWDWeJyXA1ttiPmezXw
+2026-09-07T14:38:22+0200 info OpenId4VpService : Verifier requested items: ["71EEEF13-E1BE-4D1E-BF8F-21582C61AB02": ["org.iso.18013.5.1": ["given_name", "family_name"]]]
+2026-09-07T14:38:24+0200 info WalletApp : [DEBUG] [RouterHost:175 onNavigationFollowUp(with:)] [NAV] PresentationLoader
+2026-09-07T14:38:24+0200 info OpenId4VpService : Openid4vp request items: ["71EEEF13-E1BE-4D1E-BF8F-21582C61AB02": ["org.iso.18013.5.1": ["family_name", "given_name"]]]
+2026-09-07T14:38:24+0200 info MdocDataModel18013 : Unlocking key with id: 71EEEF13-E1BE-4D1E-BF8F-21582C61AB02
+2026-09-07T14:38:24+0200 info WalletStorage : Keychain queryValue: Software:skey:issued id:71EEEF13-E1BE-4D1E-BF8F-21582C61AB02_0 for save:false
+2026-09-07T14:38:24+0200 info MdocSecurity18013 : Creating signature with ES256 for id: 71EEEF13-E1BE-4D1E-BF8F-21582C61AB02, key index 0
+2026-09-07T14:38:24+0200 info WalletApp : [DEBUG] [PinnedCertificateNetworking:52 data(for:)] 
+
+==================== Network Request Begin ====================
+🔵 Request: https://localhost:8443/test/a/german-wallet-vp-haip-mdoc-direct-post-jwt-1788784374/responseuri
+🔵 Method: POST
+🔵 Body: response=eyJhbGciOiJFQ0RILUVTIiwiYXB1IjoiVTBoNllsZEVWMlZLZVZoQk1YUjBhVkJ0WlhwWWR3IiwiYXB2IjoiYUhkRGNuRnBTMlJYU1VOc1VXaExhbWxrYzFoTVNpMHVYMzQiLCJlbmMiOiJBMTI4R0NNIiwiZXBrIjp7ImNydiI6IlAtMjU2Iiwia2lkIjoiRTJBQTc5QUMtQjYzNC00RURGLTg1RkEtRDFFMDY2RTJGMTk5Iiwia3R5IjoiRUMiLCJ4IjoiSjRwZ0FFOFZmdWFIR0Z3aDJFVFJwdG85TG9DdlBjZmZUTFQyT2YtOHVrayIsInkiOiJMSmhjeWx5OVVpSWE1S24xb1NSWFpnRGJSMXNQYzJHcHFaUWVhWmlUTzlVIn0sImtpZCI6IjUzYjhjZmJkLTRjZjQtNDgxMy05ODliLTg1NjJhY2NhZTdiMiJ9..PvCHBqxYnPXnZZlD.wqrVyJB6lkWgF4kXVjDtYbLTripCDQPo3pBzhB766xmSaVSNBR4c4nuYf2CFqZFMcsor0ZNoi0vVDt2OxJjvqhXyeRjvzfGXVmf6B_OKhy0_stfxCWN8fGh9gyJiOm--w2kc_kmQ1V6IkrTTi04CghkjAmJE5peLBbgd4aghcEczXYyY19SiEPYD0ArgSMy5uwSLx6XoA10Oy3SbVZTMItnLDRdzwTZ8LqvpCgtJghlKUZWFc0WeUmVjln0dgHzFCY7AWRpcM9IYrzdejXDXEgT27LHIkld7mnDG1R4vD0BHkY2qeDQ3pyz1kJGIaeT2FaJPOQkXHszX0Xa4bqlgSDk7lkVCZMjEHrRZ1QGWysCIFocw9DRckjFN-C-Mqzm0O4GNpxtqzjlNHgsnNEal9pMJL_8FVot4gbq5Dzu5CJwx94s2N8t5CHWRsPrELiI82lvrjefjMQLQF9i85VdjbgwHEErE-b1Hb5PXmonZm_pQwuWSYnfbBAgPlrfIQO9B83kBV8zPm8VxUShvpQ5-M7uGOHgPyc4vac3yu5X-gpsyajnDQZGtE3nSSpl4DSU75VrmwxrdtNPbiuXpVPEv1lA4VqXrGltz1cWlMLq_r99-A_PIRkdc5Nhp94QuQJ49Ya25VtILmFkHL57ADSdPlSpSZY0iCHu17BM-NKy1OUAMMztK7NxJ7WtIjQNcs_WE9iOvlaFAad64t3kaA8131WvcT1tDcGnYw0aVSkQ4m4WlWf4pI44A__Izsfyk3k5PxvyHnBliMlout4dftc651DkMq0RofaptMyDwYZC6oLyPrLfDYKBZXIy20qdbsCvcWdrRgA3o2hfA-igUMAtDjapvrKKo5YabY1DPBxxz4YL3VylEdkh_bCvB-A72FHKYTKnkB4MiKEK3PcswChOIB3t-SsuBRLOilEtxoFfyEETxjpE6jfZUAvP0vUn3D_a_SiUQLMuejU9tSk6XKvrQg1tb69SNC6r-XIkU8D26c5tSO3LHat8Wgl5-j9yPIDdT7gxg-U9YCGbWyUO3D8o9k-Y2LvDMxRaJxaJXcNBcu3wC2OK17cx5tCLmYZKlqMRkkJHjbF7UkCVz7gsjVw9lObcyukJLaFYARduW6GYhbYONxPjMBhz6SfK3My5IF0rMQfmoJt4MRJlR_nfueCTghgFGaHP3I_aSj-e1i6SAbW1wuJwFrjznRBhmYkJ_6oGK8jOD9CR5sCAQNYcOAln6_AUkvCqgxhwleBlKE3womQMVGACwD2Td-8m2RobKWL1EQHUM3PqrYbxg9gTUMhJB8LMji9lzbQ9yRLI9I5RzXtq5QWlOy7Vy7nyuSIAymzzPdUGkYFJqI_rhdLtJKuZWyF_JOf2EKfl5WvhG7d4rYlkWIfyA0E5Bey5VaOG9dN7zrrRqnZPJuYeT_Hc-i0f6zvd-wFE8JRNXhZ0akytBWVJkRrmx0X2YouWCXAAt5AWhOtlPDo4f1iWN3t3KWO5dhBDcYz8EzTYNIl3PjU1AIjCS2WwB-FE1UJcuM9YC1Ghmx1VgWUnxKBqPN1eO1mzwUzzwxxo1DehOu1UpCvrkAhnMfT01rtvzlga8_a2jVz-046L6btO1msBtUYWUDbrKcZoGoj0soff7a-hfp0uJ5YXmM2fsl7qWlcvHymXYgbqqWftDmnFqIMoErUlJ5Pgzghn-4L6_Ka_Q5WuthZMSFXKPi48G1nxtzotX5Fe-19Urpc5ydxJKCZqH9f5OOntZNjsnhcyZlThiF3pu2_v8tpuzs1DX0R8I5vM7gl9SvHT-Kut_qkS6AkfbKyGWIdCnx2Oe4_TtTXO0PnGVOgBnBPAXWquPQuUc9wo8pMB3-hn-G9E9HmwoX8-asd-vx_yV_C5IZTGLUQmMXUTf7bxRrSAXS2zvwIM_4eBmI3heNYXoXRGh5i_a6eNRVrTQw9UCiSBNxeiABnDqZccqIBofSVL0PrdXI094NHxMOvHWgF5yNxe6doH51MaQ_rpTIR1B_Ph_Iz8280zuCX5vZWgxxUk626Cx7A-7_eyk1L0o-0ho5tsDpVKER12Z86S0uALL0gDGh23yDgD6M8Nk9bk_f7pu_msceb3FFAjC9EO0nuh1ILEBOt9U8h2AYa1sVA8vqvjv6J_uYMBoRXAEriesM2HtroStVfjQhvPWTsZMq_LButG7kKmKNWUB4RYrMwRRhMx211aTmR4mOW0JQgKXBiOAzSlB2uxvkRNGjvlr2Sxc8qGmnDwHNav-WKZYgmOaSlTuvgyvweVBs4eChY45rFu91FAlc1VtrKxmM1rOmkx1kS0fbb4q2QtqTebAvRL9F2bxsiURd4Y7hqcYE-SmdpGOIvRsZnC0vRbNrV4WYgIzW2sKCEQUdSuyCMLagBmrHYeyMY-dsyqrQ5rlIiVswa3RXOpT5Q2_h2tqm4_SMGJNTXaMfMqGdgDFkAdj5v1nHRn0VK9GSbT4H7abOrjkbq_ccZRPJ4ZkL4Xs8gwjEBv7s9Ad9JOQ88kNjvzeDyOChv88ENyCZjngwwnSr5Z3LqUGy5e9d8NPmGIiYUcfIqs3O8f14GBLqcR9NGJW4ji-TBqg8lif0TG21dVAViVmAIc5AuBMAtBrVM81ns_c0om1yq9LPKX-OrdFdls65mmazWJ-78gPgDg_TzMS_oEdg_XStrSWfgHcMQUv8-9WvHRzPi9OwcePSp-RmFK2NMmVW4kc1BNqZAMSkB5FJaZqM0ad7mI3kFUaUQWnSgn-lev75AejEOrPak4ob9X3ktpuWVKv1XQgBGfg_Ye8oFaTgQuSE2IWRKc1A-cOabu_YIuGN1eYGz9Tfc28awTQgX93eWa3Z_nFxxbM9CV4oJRrjry0ygP9vfqB79IdkaYK8e2XnWzu4YYiq5rGz22IPS3Jl0S5Iagxfv2-hniYjUeq_f04cN5g1lUmL8z4cva1RFC1y_nbRzsk_UQrIVkCkwQRepMrAyhluH8WJuVz4cMO61ZdHa-th1Sr9gUmwjURJoicLNkaXYPMo5bXRHVesgL18dHn1-EWVuXA8Z8h_TQIh0h5YdkjwJrYU10DVN8i5TgDMHDu9YBLU7CTkzK3GyftHQMFo_wjLNroB4MR98MXII0MedlrzBiBQzBFGg_XpVvlk-SAWknis7BJ9oqlNmIN63VAzLfLxiKa94314E_OcEH_hPXTZkv4eOUCTRsjiaQqnytEdCwaZIiV6bHf2v2UVupun1aAm-VrfK6bnwFMBWM17sDC-_zLWdGHnK56T1-3kYOtQ10puy8Iq7Im9MB9eRCKnP7TsN7Z0cwvB8dJhitwBePNLPj9BF7QKkHk8bBK2xJZAsfe.1dPmF_L-L2HUfzB0OFp_rg
+🔵 Headers: Content-Type: application/x-www-form-urlencoded
+⛔️ Status: 400
+🟡 Response Headers: Cache-Control: no-cache, no-store, max-age=0, must-revalidate, Connection: keep-alive, X-Frame-Options: SAMEORIGIN, Vary: origin,access-control-request-method,access-control-request-headers,accept-encoding, Strict-Transport-Security: max-age=31536000 ; includeSubDomains, X-XSS-Protection: 0, X-Content-Type-Options: nosniff, Date: Mon, 07 Sep 2026 12:38:24 GMT, Server: nginx/1.27.3, Expires: 0, Transfer-Encoding: Identity, Content-Encoding: gzip, Content-Type: application/json;charset=UTF-8, Pragma: no-cache
+🟡 Response Body: {
+  "cause" : null,
+  "error" : "Direct post endpoint was called but the wallet should have rejected the request due to redirect_uri being present with direct_post",
+  "error_description" : null,
+  "testId" : "IBxCswMfE3QRxmS"
+}
+==================== Network Request End ====================
+
+2026-09-07T14:38:24+0200 info OpenId4VpService : Dispatch rejected, reason: {"error":"Direct post endpoint was called but the wallet should have rejected the request due to redirect_uri being present with direct_post","error_description":null,"cause":null,"testId":"IBxCswMfE3QRxmS"}
+2026-09-07T14:38:24+0200 error EudiWalletKit : {"error":"Direct post endpoint was called but the wallet should have rejected the request due to redirect_uri being present with direct_post","error_description":null,"cause":null,"testId":"IBxCswMfE3QRxmS"}
+2026-09-07T14:38:24+0200 info WalletApp : [DEBUG] [PresentationLoadingViewModel:231 doWork()] error:: ({"error":"Direct post endpoint was called but the wallet should have rejected the request due to redirect_uri being present with direct_post","error_description":null,"cause":null,"testId":"IBxCswMfE3QRxmS"})

@@ -54,7 +54,10 @@ func cell(s string) string {
 
 var VerdictColumns = []string{"PASSED", "FAILED", "WARNING", "REVIEW", "INTERRUPTED", "SKIPPED", "NOT RUN", "OTHER"}
 
-type ReportModule struct{ Name, Verdict, Detail string }
+type ReportModule struct {
+	ID, Name, Verdict, Detail string
+	Variant                   Variant
+}
 type ReportPlan struct {
 	Ref     PlanRef
 	Name    string
@@ -73,12 +76,13 @@ func ReadReport(ctx context.Context, api *API, refs []PlanRef, details bool) ([]
 		}
 		r := ReportPlan{Ref: ref, Name: plan.Name}
 		for _, module := range plan.Modules {
-			m := ReportModule{Name: ShortName(module.Name), Verdict: "NOT RUN"}
+			m := ReportModule{Name: module.Name, Verdict: "NOT RUN", Variant: module.Variant}
 			if module.Variant["vci_credential_issuance_mode"] == "deferred" {
 				m.Name += " (deferred)"
 			}
 			if len(module.Instances) > 0 {
 				id := module.Instances[len(module.Instances)-1]
+				m.ID = id
 				var info ModuleInfo
 				if err := api.JSON(ctx, "GET", "api/info/"+id, nil, &info); err != nil {
 					return nil, err
@@ -139,7 +143,7 @@ func WriteReport(w io.Writer, suite string, plans []ReportPlan, details bool) {
 		for _, p := range plans {
 			fmt.Fprintf(w, "\n## %s\n\n| Module | Result | First failure |\n| --- | --- | --- |\n", cell(p.Ref.Slug))
 			for _, m := range p.Modules {
-				fmt.Fprintf(w, "| %s | %s | %s |\n", cell(m.Name), m.Verdict, cell(m.Detail))
+				fmt.Fprintf(w, "| %s | %s | %s |\n", cell(ShortName(m.Name)), m.Verdict, cell(m.Detail))
 			}
 		}
 	}

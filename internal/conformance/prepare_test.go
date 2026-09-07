@@ -39,7 +39,11 @@ func TestWalletLaunchWaitsForSimulatorRegistration(t *testing.T) {
 func TestWalletPreparationWaitsForTheSuiteBeforeLaunching(t *testing.T) {
 	bin := t.TempDir()
 	calls := filepath.Join(bin, "calls")
-	if err := os.WriteFile(filepath.Join(bin, "xcrun"), []byte("#!/bin/bash\nprintf '%s\\n' \"$*\" >>\"$SIMULATOR_CALLS\"\n"), 0755); err != nil {
+	if err := os.MkdirAll(filepath.Join(bin, "Library", "Caches"), 0700); err != nil {
+		t.Fatal(err)
+	}
+	t.Setenv("APP_CONTAINER", bin)
+	if err := os.WriteFile(filepath.Join(bin, "xcrun"), []byte("#!/bin/bash\nprintf '%s\\n' \"$*\" >>\"$SIMULATOR_CALLS\"\nif [ \"$2\" = get_app_container ] || [ \"$2\" = getenv ]; then printf '%s\\n' \"$APP_CONTAINER\"; fi\n"), 0755); err != nil {
 		t.Fatal(err)
 	}
 	t.Setenv("PATH", bin+":"+os.Getenv("PATH"))
@@ -49,7 +53,7 @@ func TestWalletPreparationWaitsForTheSuiteBeforeLaunching(t *testing.T) {
 		t.Fatal(err)
 	}
 	got, err := os.ReadFile(calls)
-	if err != nil || string(got) != "simctl terminate test-device test-app\nsimctl terminate test-device com.apple.mobilesafari\n" {
+	if err != nil || string(got) != "simctl terminate test-device test-app\nsimctl terminate test-device com.apple.mobilesafari\nsimctl get_app_container test-device test-app data\nsimctl getenv test-device HOME\n" {
 		t.Fatalf("startup must wait until the suite issuer exists: %s, %v", got, err)
 	}
 	if driver.onboarded {
@@ -61,7 +65,11 @@ func TestWalletPreparationRejectsSimulatorErrors(t *testing.T) {
 	for _, message := range []string{"found nothing to terminate", "Unable to lookup in current state: Shutdown"} {
 		t.Run(message, func(t *testing.T) {
 			bin := t.TempDir()
-			script := "#!/bin/bash\necho \"$SIMULATOR_ERROR\" >&2\nexit 3\n"
+			if err := os.MkdirAll(filepath.Join(bin, "Library", "Caches"), 0700); err != nil {
+				t.Fatal(err)
+			}
+			t.Setenv("APP_CONTAINER", bin)
+			script := "#!/bin/bash\nif [ \"$2\" = get_app_container ] || [ \"$2\" = getenv ]; then printf '%s\\n' \"$APP_CONTAINER\"; exit 0; fi\necho \"$SIMULATOR_ERROR\" >&2\nexit 3\n"
 			if err := os.WriteFile(filepath.Join(bin, "xcrun"), []byte(script), 0755); err != nil {
 				t.Fatal(err)
 			}
@@ -274,5 +282,64 @@ func TestWalletCAKeepsIncompleteExistingCA(t *testing.T) {
 				t.Fatal("replaced existing CA material")
 			}
 		})
+	}
+}
+
+func TestParallelSetupReinstallsClonedApp(t *testing.T) {
+	root := t.TempDir()
+	for _, dir := range []string{"scripts", "ios-app", ".build/bin", "run"} {
+		if err := os.MkdirAll(filepath.Join(root, dir), 0755); err != nil {
+			t.Fatal(err)
+		}
+	}
+	script, err := os.ReadFile("../../scripts/parallel-run.sh")
+	if err != nil {
+		t.Fatal(err)
+	}
+	files := map[string]string{
+		"scripts/parallel-run.sh": string(script),
+		"ios-app/simulator.sh":    "#!/bin/bash\nif [[ $SIMULATOR_NAME == *sdjwt* ]]; then echo export DE_WALLET_IOS_UDID=sdjwt; else echo export DE_WALLET_IOS_UDID=mdoc; fi\n",
+		".build/bin/conformance": `#!/bin/bash
+if [ "$1" = parallel ]; then exit 0; fi
+while [ "$#" -gt 0 ]; do
+  if [ "$1" = --runner-log ]; then printf 'seed\n' >"$2"; exit 0; fi
+  shift
+done
+exit 1
+`,
+		".build/bin/xcrun": `#!/bin/bash
+printf '%s\n' "$*" >>"$SIMULATOR_CALLS"
+case "$2" in
+  get_app_container) echo "/apps/$3.app" ;;
+  clone) echo "$3-vp" ;;
+esac
+`,
+	}
+	for path, data := range files {
+		if err := os.WriteFile(filepath.Join(root, path), []byte(data), 0755); err != nil {
+			t.Fatal(err)
+		}
+	}
+	calls := filepath.Join(root, "calls")
+	t.Setenv("PATH", filepath.Join(root, ".build/bin")+":"+os.Getenv("PATH"))
+	t.Setenv("SIMULATOR_CALLS", calls)
+	t.Setenv("OIDF_RUN_DIR", filepath.Join(root, "run"))
+	t.Setenv("OIDF_SUITE_DIR", filepath.Join(root, "suite"))
+	t.Setenv("WORKERS", "4")
+	t.Setenv("RESUME_LOG", "")
+	t.Setenv("SKIP_BUILD", "0")
+	out, err := exec.Command(filepath.Join(root, "scripts/parallel-run.sh")).CombinedOutput()
+	if err != nil {
+		t.Fatalf("setup: %v: %s", err, out)
+	}
+	data, err := os.ReadFile(calls)
+	if err != nil {
+		t.Fatal(err)
+	}
+	for _, format := range []string{"sdjwt", "mdoc"} {
+		want := fmt.Sprintf("simctl boot %s-vp\nsimctl bootstatus %s-vp -b\nsimctl install %s-vp /apps/%s.app\nsimctl launch %s-vp org.sprind.wallet.dev\nsimctl terminate %s-vp org.sprind.wallet.dev\nsimctl shutdown %s-vp\n", format, format, format, format, format, format, format)
+		if !strings.Contains(string(data), want) {
+			t.Fatalf("clone was not reinstalled before use: %s", data)
+		}
 	}
 }

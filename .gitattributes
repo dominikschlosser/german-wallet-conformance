@@ -1,0 +1,2 @@
+# Preserve captured app output verbatim.
+docs/test-results/*-wallet.txt -whitespace

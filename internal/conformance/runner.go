@@ -25,6 +25,7 @@ type Wallet interface {
 	Prepare(context.Context) error
 	Submit(context.Context, string, string, string) (string, error)
 	Screenshot(context.Context) ([]byte, error)
+	Log(context.Context) ([]byte, error)
 }
 type Runner struct {
 	API                                     *API
@@ -173,7 +174,7 @@ func (r *Runner) Run(ctx context.Context, o RunOptions) error {
 				if s.Kind == "vci" && cfg.Alias != o.Config.VCIAlias {
 					return fmt.Errorf("resuming %s requires the app issuer alias %s", s.Slug, cfg.Alias)
 				}
-				info, e = r.RunModule(ctx, plan.ID, m)
+				info, e = r.RunModule(ctx, plan.ID, m, filepath.Join(o.ResultsDir, "wallet-logs"))
 			}
 			if e != nil {
 				return e
@@ -287,7 +288,7 @@ func ParseSelectors(raw string, plans int) (map[int]map[int]bool, error) {
 	}
 	return result, nil
 }
-func (r *Runner) RunModule(ctx context.Context, planID string, m Module) (ModuleInfo, error) {
+func (r *Runner) RunModule(ctx context.Context, planID string, m Module, logDir string) (result ModuleInfo, runErr error) {
 	if err := r.Wallet.Prepare(ctx); err != nil {
 		return ModuleInfo{}, fmt.Errorf("prepare wallet: %w", err)
 	}
@@ -301,6 +302,17 @@ func (r *Runner) RunModule(ctx context.Context, planID string, m Module) (Module
 	if created.ID == "" {
 		return ModuleInfo{}, fmt.Errorf("suite returned a module without an id")
 	}
+	defer func() {
+		ctx, cancel := context.WithTimeout(context.Background(), 30*time.Second)
+		defer cancel()
+		data, err := r.Wallet.Log(ctx)
+		if err == nil {
+			err = writeWalletLog(logDir, created.ID, data)
+		}
+		if err != nil {
+			runErr = errors.Join(runErr, fmt.Errorf("capture wallet log for %s: %w", created.ID, err))
+		}
+	}()
 	r.Logger.Printf("Created test module, new id: %s", created.ID)
 	submitted, uploaded := map[string]bool{}, map[string]bool{}
 	started := time.Now()
@@ -312,6 +324,7 @@ func (r *Runner) RunModule(ctx context.Context, planID string, m Module) (Module
 		if err := r.API.JSON(ctx, "GET", "api/info/"+created.ID, nil, &info); err != nil {
 			return info, err
 		}
+		info.ID = created.ID
 		if info.Status != lastStatus {
 			r.Logger.Printf("module id %s status changed to %s", created.ID, info.Status)
 			lastStatus = info.Status
